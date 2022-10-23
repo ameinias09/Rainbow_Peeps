@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1c1025;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(28, 0, 52);
+    color: #fff;
+}
+
+.nav-links a {
+    color: #fff;
+}
+
+
+/* LOGO */
+
+img.logoimg {
+    height: 60px;
+    width: 135.2px;
+}
+
+
+/* NAVBAR MENU */
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+
+.menu li:hover {
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+
+
+/*Main content */
+
+div.layer {
+    padding: 2% 8% 2% 8%;
+    width: 40%;
+    align-self: center, auto;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    background-color: rgba(0, 74, 202, 0.226);
+    border-radius: 18px;
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    position: static;
+    margin: 1% 0%;
+    padding: 5px 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+    background-color: rgb(26, 26, 26, 0.4);
+    color: aliceblue;
+    border: 0.5px solid rgb(0, 0, 0, 0);
+    font-size: 1.1em;
+}
+
+select {
+    padding: 5px 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+    background-color: rgb(26, 26, 26, 0.4);
+    color: aliceblue;
+    border: 0.5px solid rgb(0, 0, 0, 0);
+    font-size: 1.1em;
+}
+
+select option {
+    background: rgb(26, 26, 26, 0.4);
+    color: aliceblue;
+}
+
+input::placeholder {
+    opacity: 0.6;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 0.5px solid white;
+}
+
+select {
+    margin: 1% 0%;
+    padding: 0.5%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    width: 70%;
+}
+
+textarea {
+    margin: 1% 0%;
+    padding: 0.5%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@import 'https://fonts.googleapis.com/css?family=Space+Mono';
+button {
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1px;
+    background: none;
+    color: white;
+    position: relative;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 190px;
+    font-size: 14px;
+    z-index: 2;
+    transition: 0.01s 0.23s ease-out all;
+    overflow: hidden;
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 55%;
+    background: rgb(0, 7, 72);
+    z-index: -1;
+    transition: 0.3s ease-in all;
+}
+
+button:after {
+    content: '';
+    position: absolute;
+    left: -5%;
+    top: 5%;
+    height: 90%;
+    width: 5%;
+    background: rgb(0, 36, 156);
+    z-index: -1;
+    transition: 0.4s 0.02s ease-in all;
+}
+
+button:hover {
+    cursor: pointer;
+    color: transparent;
+}
+
+button:hover:before {
+    left: 100%;
+    width: 25%;
+}
+
+button:hover:after {
+    left: 100%;
+    width: 70%;
+}
+
+button:hover .icon-right.after:after {
+    left: -80px;
+    color: white;
+    transition: 0.2s 0.2s ease all;
+}
+
+button:hover .icon-right.after:before {
+    left: -104px;
+    top: 14px;
+    opacity: 0.2;
+    color: white;
+}
+
+.icon-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.icon-right:after {
+    font-family: "FontAwesome";
+    content: '\2192';
+    font-size: 24px;
+    display: inline-block;
+    position: relative;
+    top: 26px;
+    transform: translate3D(0, -50%, 0);
+}
+
+.icon-right.after:after {
+    left: -250px;
+    color: rgb(0, 39, 105);
+    transition: 0.15s 0.25s ease left, 0.5s 0.05s ease color;
+}
+
+.icon-right.after:before {
+    content: 'Next';
+    position: absolute;
+    left: -230px;
+    top: 14px;
+    opacity: 0;
+    transition: 0.2s ease-in all;
+}
+
+.signature {
+    position: fixed;
+    font-family: sans-serif;
+    font-weight: 100;
+    bottom: 10px;
+    left: 0;
+    letter-spacing: 4px;
+    font-size: 10px;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 780px) {
+    div.layer {
+        width: 65vw;
+    }
+}
