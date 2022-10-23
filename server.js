@@ -15,10 +15,10 @@ mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?r
 
 app.post('/SignUp', async(req, res) => {
     console.log("inside")
-    const email_add = new signup(req.body)
+    const data_add = new signup(req.body)
     try {
-        await email_add.save()
-        res.json(email_add)
+        await data_add.save()
+        res.json(data_add)
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
