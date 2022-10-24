@@ -250,10 +250,6 @@ button:hover .icon-right.after:before {
     text-decoration: none;
 }
 
-.compulsory {
-    color: red;
-}
-
 @media only screen and (max-width: 780px) {
     div.layer {
         width: 65vw;
