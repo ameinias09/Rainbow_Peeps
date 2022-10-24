@@ -8,6 +8,7 @@ btn.addEventListener('click', e => {
         alert("Please fill out all the fields!!");
         return false;
     }
+
     fetch('http://localhost:3000/SignUp', {
             method: 'POST', // or 'PUT'
             headers: {
@@ -19,14 +20,17 @@ btn.addEventListener('click', e => {
                 email: email.value,
                 name: name.value,
                 password: password.value,
-            }),
+            })
         })
         .then(res => {
             return res.json()
         })
         .then(data => console.log(data))
 
-    window.location.replace("BasicInfo.html");
+
+
+
+    // window.location.replace("BasicInfo.html");
 })
 
 // method: 'POST', // or 'PUT'

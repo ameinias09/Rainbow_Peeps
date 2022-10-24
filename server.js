@@ -2,11 +2,14 @@ const express = require("express")
 const cors = require('cors');
 const app = express()
 app.use(cors());
+const bcrypt = require('bcrypt')
 app.use(express.json());
 const mongoose = require('mongoose')
 const { signup } = require('./models/signup')
 const { basicinfo } = require('./models/basicinfo')
 const { profileinfo } = require('./models/profileinfo')
+
+
 mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?retryWrites=true&w=majority').then(() => {
     console.log("Connected")
 }).catch((err) => {
@@ -15,19 +18,27 @@ mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?r
 
 
 app.post('/SignUp', async(req, res) => {
-    console.log("inside")
-    const data_add = new signup(req.body)
+
     try {
-        await data_add.save()
-        res.json(data_add)
-    } catch (error) {
-        console.log(error)
-        res.status(500).send(error);
+        const salt = await bcrypt.genSalt()
+        const hashedpassword = await bcrypt(req.body.password)
+
+        console.log("inside signup")
+        const data_add = { email: req.body.email, name: req.body.name, password: hashedpassword }
+        try {
+            await data_add.save()
+            res.json(data_add)
+        } catch (error) {
+            console.log(error)
+            res.status(500).send(error);
+        }
+    } catch {
+        res.status(500).send()
     }
 })
 
 app.post('/BasicInfo', async(req, res) => {
-    console.log("inside")
+    console.log("inside basicinfo")
     const data_add = new basicinfo(req.body)
     try {
         await data_add.save()
@@ -39,7 +50,7 @@ app.post('/BasicInfo', async(req, res) => {
 })
 
 app.post('/ProfileInfo', async(req, res) => {
-    console.log("inside")
+    console.log("inside profileinfo")
     const data_add = new profileinfo(req.body)
     try {
         await data_add.save()
