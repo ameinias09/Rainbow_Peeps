@@ -18,22 +18,14 @@ mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?r
 
 
 app.post('/SignUp', async(req, res) => {
-
+    console.log("inside")
+    const data_add = new signup(req.body)
     try {
-        const salt = await bcrypt.genSalt()
-        const hashedpassword = await bcrypt(req.body.password)
-
-        console.log("inside signup")
-        const data_add = { email: req.body.email, name: req.body.name, password: hashedpassword }
-        try {
-            await data_add.save()
-            res.json(data_add)
-        } catch (error) {
-            console.log(error)
-            res.status(500).send(error);
-        }
-    } catch {
-        res.status(500).send()
+        await data_add.save()
+        res.json(data_add)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error);
     }
 })
 

@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar">
         <!-- LOGO -->
-        <div class="logo"><img class="logoimg" src="C:\Users\sanka\Documents\ProjectSummer22\Pics\rainbow peeps.png" /></div>
+        <div class="logo"><img class="logoimg" src="..\.\Pics\rainbow peeps.png" /></div>
         <!-- NAVIGATION MENU -->
         <ul class="nav-links">
             <!-- NAVIGATION MENUS -->
@@ -25,43 +25,43 @@
         <div class="layer" id="opaque">
             <form>
                 <label for="dob"> Date of Birth:</label><br/>
-                <input type="date" /><br/><br/>
-                <label for="gender">Gender Identity<i class="compulsory">*</i>:</label><br/>
-                <select name="gender">
-            <option disabled selected value> -- select an option -- </option>
-            <option value="man">Male/Man</option>
-            <option value="woman">Female/Woman</option>
+                <input type="date" id="dobInput" /><br/><br/>
+                <label for="gender">Gender Identity<i class="compulsory">*</i> :</label><br/>
+                <select name="gender" id="genderInput">
+            <option value ="null" disabled selected value> -- select an option -- </option>
+            <option value="Male">Male/Man</option>
+            <option value="Female">Female/Woman</option>
             <option value="transm">Trans Male</option>
             <option value="transf">Trans Female</option>
             <option value="qn">Questioning</option>
             <option value="gq">Genderqueer/ Gender non-conforming/ Genderfluid</option>
           </select><br/><br/>
-                <label for="pronoun">Gender Pronouns<i class="compulsory">*</i>:</label><br/>
-                <select name="pronoun">
-            <option disabled selected value> -- select an option -- </option>
+                <label for="pronoun">Gender Pronouns<i class="compulsory">*</i> :</label><br/>
+                <select name="pronoun" id="pronounsInput">
+      <option value ="null" disabled selected value> -- select an option -- </option>
             <option value="he">He/Him</option>
             <option value="she">She/Her</option>
             <option value="they">They/Them/Theirs</option>
             <option value="ze">Ze/Zir/Zirs</option>
             <option value="mname">My Name</option>
           </select><br/><br/>
-                <label for="rorientation">Romantic Orientation<i class="compulsory">*</i>:</label><br/>
-                <select name="rorientation">
-            <option disabled selected value> -- select an option -- </option>
-            <option value="homor">Homoromantic</option>
-            <option value="heteror">Heteroromantic</option>
-            <option value="bir">Biromantic</option>
-            <option value="demir">demiromantic</option>
-            <option value="aror">Aromantic</option>
-            <option value="panr">Panromantic</option>
-            <option value="qnr">Questioning</option>
+                <label for="rorientation">Romantic Orientation<i class="compulsory">*</i> :</label><br/>
+                <select name="rorientation" id="rorientationInput">
+      <option value ="null" disabled selected value> -- select an option -- </option>
+      <option value="homoromantic">Homoromantic</option>
+      <option value="heteroromantic">Heteroromantic</option>
+      <option value="biroromantic">Biromantic</option>
+      <option value="demiroromantic">demiromantic</option>
+      <option value="arororomantic">Aromantic</option>
+      <option value="panroromantic">Panromantic</option>
+      <option value="qnroromantic">Questioning</option>
           </select><br/><br/>
-                <label for="sorientation">Sexual Orientation<i class="compulsory">*</i>:</label><br/>
-                <select name="sorientation">
-            <option disabled selected value> -- select an option -- </option>
+                <label for="sorientation">Sexual Orientation<i class="compulsory">*</i> :</label><br/>
+                <select name="sorientation" id="sorientationInput">
+      <option value ="null" disabled selected value> -- select an option -- </option>
             <option value="gay">Gay</option>
             <option value="lesbian">Lesbian</option>
-            <option value="bis">Bisexual</option>
+            <option value="Bisexual">Bisexual</option>
             <option value="queer">Queer</option>
             <option value="ace">Asexual</option>
             <option value="pans">Pansexual</option>
@@ -75,6 +75,7 @@
         <button class="next">Next<span class="icon-right"></span><span class="icon-right after"> </span></button>
 
     </div>
+    <script src="BasicInfo.js"></script>
 </body>
 
 </html>

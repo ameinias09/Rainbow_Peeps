@@ -30,7 +30,7 @@ btn.addEventListener('click', e => {
 
 
 
-    // window.location.replace("BasicInfo.html");
+    window.location.replace("BasicInfo.html");
 })
 
 // method: 'POST', // or 'PUT'
