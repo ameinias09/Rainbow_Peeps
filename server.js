@@ -53,5 +53,22 @@ app.post('/ProfileInfo', async(req, res) => {
     }
 })
 
-
+app.post('/Login', async(req, res) => {
+    try {
+        console.log("inside")
+        const email = req.body.email
+        const password = req.body.password
+        const user = await signup.findOne({ email: email })
+        if (user.password === password) {
+            res.status(201).send()
+            console.log("Login Success")
+        } else {
+            console.log("Invalid Password")
+            res.status(400).send()
+        }
+    } catch (error) {
+        console.log("Invalid Email")
+        res.status(400).send()
+    }
+})
 app.listen(3000)
