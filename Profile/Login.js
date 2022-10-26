@@ -19,13 +19,13 @@ btn.addEventListener('click', e => {
             })
         })
         .then(res => {
-            console.log("Login Success")
+            // console.log("Login Success")
+            console.log(res);
+            if (res.status == 400)
+                throw new Error("Invalid details")
         })
-        .then(data => alert("Invalid Email or Password"))
-
-
-
-
+        .then(data => console.log("data", data))
+        .catch(err => alert(err))
 })
 
 // method: 'POST', // or 'PUT'

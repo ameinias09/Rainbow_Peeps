@@ -1,9 +1,41 @@
 const mongoose = require("mongoose");
 
 const profileinfoSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        require: true
+    },
+    password: {
+        type: String,
+        require: true
+    },
+    dob: {
+        type: Date,
+        required: false
+    },
+    gender: {
+        type: String,
+        require: true
+    },
+    pronoun: {
+        type: String,
+        require: true
+    },
+    rorientation: {
+        type: String,
+        require: true
+    },
+    sorientation: {
+        type: String,
+        require: true
+    },
     about: {
         type: String,
-        required: false,
+        required: false
     },
     personality: {
         type: String,

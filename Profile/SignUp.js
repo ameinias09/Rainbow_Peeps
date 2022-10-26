@@ -1,4 +1,5 @@
 const btn = document.querySelector(".btn")
+var flag = true
 btn.addEventListener('click', e => {
     console.log('inside');
     const email = document.getElementById('emailInput');
@@ -8,29 +9,31 @@ btn.addEventListener('click', e => {
         alert("Please fill out all the fields!!");
         return false;
     }
+    document.cookie = "email" + "=" + email.value + "" + "; path=/"
+    document.cookie = "name" + "=" + name.value + "" + "; path=/"
+    document.cookie = "password" + "=" + password.value + "" + "; path=/"
 
     fetch('http://localhost:3000/SignUp', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
-                'Content-Type': 'application/json',
-                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 email: email.value,
-                name: name.value,
-                password: password.value,
             })
         })
         .then(res => {
-            return res.json()
+            if (res.status == 400)
+                throw new Error("Email already Exists")
         })
         .then(data => console.log(data))
+        .catch(err => alert(err))
+        // if (flag) {
+        //     alert("Email already exists")
+        //     return false
+        // }
 
-
-
-
-    window.location.replace("BasicInfo.html");
+    // window.location.replace("BasicInfo.html");
 })
 
 // method: 'POST', // or 'PUT'

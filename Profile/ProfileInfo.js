@@ -1,3 +1,13 @@
+var email = ""
+var namepr = ""
+var password = ""
+var dob = ""
+var gender = ""
+var pronouns = ""
+var rorientation = ""
+var sorientation = ""
+const cookieArr = document.cookie.split("; ");
+
 const btn = document.getElementById("finish");
 btn.addEventListener('click', e => {
     console.log('inside');
@@ -9,18 +19,61 @@ btn.addEventListener('click', e => {
     const favseries = document.getElementById('favseriesInput');
     const favbook = document.getElementById('favbookInput');
 
+    for (var i = 0; i < cookieArr.length; i++) {
+        const cookie = cookieArr[i].split("=")
+        if (cookie[0] == "email") {
+            email = cookie[1]
+            document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else
+        if (cookie[0] == "name") {
+            namepr = cookie[1]
+            document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else
+        if (cookie[0] == "password") {
+            password = cookie[1]
+            document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else
+        if (cookie[0] == "dob") {
+            dob = cookie[1] + ""
+            document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else
+        if (cookie[0] == "gender") {
+            gender = cookie[1]
+            document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else
+        if (cookie[0] == "pronouns") {
+            pronouns = cookie[1]
+            document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else
+        if (cookie[0] == "rorientation") {
+            rorientation = cookie[1]
+            document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else
+        if (cookie[0] == "sorientation") {
+            sorientation = cookie[1]
+            document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+    }
+    console.log(email)
+    if (email == "" || gender == "") {
+        alert("Bad Session/Session Expired")
+        return false
+    }
+
     fetch('http://localhost:3000/ProfileInfo', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
-                'Content-Type': 'application/json',
-                'Content-Type': 'application/json',
-                'Content-Type': 'application/json',
-                'Content-Type': 'application/json',
-                'Content-Type': 'application/json',
-                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                email: email,
+                name: namepr,
+                password: password,
+                dob: dob,
+                gender: gender,
+                pronouns: pronouns,
+                rorientation: rorientation,
+                sorientation: sorientation,
                 about: about.value,
                 personality: personality.value,
                 interest: interest.value,
@@ -35,7 +88,7 @@ btn.addEventListener('click', e => {
         })
         .then(data => console.log(data))
 
-    window.location.href = "../Contents/Forum.html";
+    // window.location.href = "../Contents/Forum.html";
 })
 
 // method: 'POST', // or 'PUT'

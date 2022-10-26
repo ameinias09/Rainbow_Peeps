@@ -5,11 +5,12 @@ app.use(cors());
 const bcrypt = require('bcrypt')
 app.use(express.json());
 const mongoose = require('mongoose')
+const cookieParser = require("cookie-parser")
 const { signup } = require('./models/signup')
 const { basicinfo } = require('./models/basicinfo')
 const { profileinfo } = require('./models/profileinfo')
 
-
+app.use(cookieParser())
 mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?retryWrites=true&w=majority').then(() => {
     console.log("Connected")
 }).catch((err) => {
@@ -19,13 +20,15 @@ mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?r
 
 app.post('/SignUp', async(req, res) => {
     console.log("inside")
-    const data_add = new signup(req.body)
     try {
-        await data_add.save()
-        res.json(data_add)
+        const email = req.body.email
+        const user = await profileinfo.findOne({ email: email })
+        if (user.password === "123") {
+            console.log("User Exists")
+        }
     } catch (error) {
         console.log(error)
-        res.status(500).send(error);
+        res.status(400).send(error);
     }
 })
 

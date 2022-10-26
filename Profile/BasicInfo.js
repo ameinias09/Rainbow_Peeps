@@ -10,6 +10,11 @@ btn.addEventListener('click', e => {
         alert("All fields are compulsory except DOB!!");
         return false;
     }
+    document.cookie = "dob" + "=" + dob.value + "" + "; path=/"
+    document.cookie = "gender" + "=" + gender.value + "" + "; path=/"
+    document.cookie = "rorientation" + "=" + rorientation.value + "" + "; path=/"
+    document.cookie = "pronouns" + "=" + pronouns.value + "" + "; path=/"
+    document.cookie = "sorientation" + "=" + sorientation.value + "" + "; path=/"
     fetch('http://localhost:3000/BasicInfo', {
             method: 'POST', // or 'PUT'
             headers: {
