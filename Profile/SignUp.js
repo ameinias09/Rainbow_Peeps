@@ -23,17 +23,20 @@ btn.addEventListener('click', e => {
             })
         })
         .then(res => {
-            if (res.status == 400)
+            if (res.status == 404 || res.status == 400)
                 throw new Error("Email already Exists")
         })
         .then(data => console.log(data))
-        .catch(err => alert(err))
+        .catch(err => {
+            alert(err)
+            return false
+        })
         // if (flag) {
         //     alert("Email already exists")
         //     return false
         // }
 
-    // window.location.replace("BasicInfo.html");
+    window.location.replace("BasicInfo.html");
 })
 
 // method: 'POST', // or 'PUT'

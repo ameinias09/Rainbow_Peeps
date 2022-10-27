@@ -32,17 +32,17 @@ app.post('/SignUp', async(req, res) => {
     }
 })
 
-app.post('/BasicInfo', async(req, res) => {
-    console.log("inside basicinfo")
-    const data_add = new basicinfo(req.body)
-    try {
-        await data_add.save()
-        res.json(data_add)
-    } catch (error) {
-        console.log(error)
-        res.status(500).send(error);
-    }
-})
+// app.post('/BasicInfo', async(req, res) => {
+//     console.log("inside basicinfo")
+//     const data_add = new basicinfo(req.body)
+//     try {
+//         await data_add.save()
+//         res.json(data_add)
+//     } catch (error) {
+//         console.log(error)
+//         res.status(500).send(error);
+//     }
+// })
 
 app.post('/ProfileInfo', async(req, res) => {
     console.log("inside profileinfo")
@@ -61,7 +61,7 @@ app.post('/Login', async(req, res) => {
         console.log("inside")
         const email = req.body.email
         const password = req.body.password
-        const user = await signup.findOne({ email: email })
+        const user = await profileinfo.findOne({ email: email })
         if (user.password === password) {
             res.status(201).send()
             console.log("Login Success")
