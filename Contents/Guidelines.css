@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1c1025;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(28, 0, 52);
+    color: #fff;
+}
+
+.nav-links a {
+    color: #fff;
+}
+
+
+/* LOGO */
+
+img.logoimg {
+    height: 60px;
+    width: 135.2px;
+}
+
+
+/* NAVBAR MENU */
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+
+.menu li:hover {
+    background-color: rgb(42, 0, 80);
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+
+
+/*Main content */
+
+div.layer {
+    padding: 2% 8% 2% 8%;
+    width: 80%;
+    align-self: center, auto;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex; */
+    background-color: rgba(0, 74, 202, 0.226);
+    border-radius: 18px;
+    color: aliceblue;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+@media only screen and (max-width: 780px) {
+    div.layer {
+        width: 65vw;
+    }
+}

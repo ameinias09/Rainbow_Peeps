@@ -23,11 +23,15 @@ btn.addEventListener('click', e => {
             })
         })
         .then(res => {
+            console.log(res)
             if (res.status == 404 || res.status == 400)
                 throw new Error("Email already Exists")
+            return res.json()
         })
-        .then(data => console.log(data))
-        .catch(err => {
+        .then(data => window.location.replace("BasicInfo.html"))
+
+    .catch(err => {
+            console.log("in catch");
             alert(err)
             return false
         })
@@ -36,7 +40,7 @@ btn.addEventListener('click', e => {
         //     return false
         // }
 
-    window.location.replace("BasicInfo.html");
+    // window.location.replace("BasicInfo.html");
 })
 
 // method: 'POST', // or 'PUT'

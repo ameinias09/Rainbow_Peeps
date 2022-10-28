@@ -21,33 +21,35 @@ mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?r
 app.post('/SignUp', async(req, res) => {
     console.log("inside")
     try {
+        console.log(req.body)
         const email = req.body.email
         const user = await profileinfo.findOne({ email: email })
-        if (user.password === "123") {
+        if (user != null) {
             console.log("User Exists")
+            return res.status(400).send({ data: "User Already Exist" })
         }
+        return res.status(200).send({ data: "Success" })
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.post('/Profile', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await profileinfo.findOne({ _id: req.body.id })
+        res.status(200).send(user)
     } catch (error) {
         console.log(error)
         res.status(400).send(error);
     }
 })
 
-// app.post('/BasicInfo', async(req, res) => {
-//     console.log("inside basicinfo")
-//     const data_add = new basicinfo(req.body)
-//     try {
-//         await data_add.save()
-//         res.json(data_add)
-//     } catch (error) {
-//         console.log(error)
-//         res.status(500).send(error);
-//     }
-// })
-
 app.post('/ProfileInfo', async(req, res) => {
     console.log("inside profileinfo")
     const data_add = new profileinfo(req.body)
     try {
+        console.log(data_add)
         await data_add.save()
         res.json(data_add)
     } catch (error) {
@@ -62,9 +64,13 @@ app.post('/Login', async(req, res) => {
         const email = req.body.email
         const password = req.body.password
         const user = await profileinfo.findOne({ email: email })
-        if (user.password === password) {
-            res.status(201).send()
+        console.log(user.password)
+        console.log(password)
+        const isMatch = await bcrypt.compare(password, user.password)
+        if (isMatch) {
             console.log("Login Success")
+            res.status(201).send()
+
         } else {
             console.log("Invalid Password")
             res.status(400).send()

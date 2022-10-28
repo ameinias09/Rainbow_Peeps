@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const bcrypt = require('bcrypt')
 const profileinfoSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -62,6 +62,12 @@ const profileinfoSchema = new mongoose.Schema({
         require: true
     }
 });
+
+profileinfoSchema.pre('save', async function(next) {
+    if (this.isModified('password')) {
+        this.password = await bcrypt.hash(this.password, 12)
+    }
+})
 
 const profileinfo = mongoose.model("ProfileInfo", profileinfoSchema);
 
