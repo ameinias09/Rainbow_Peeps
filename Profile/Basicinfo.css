@@ -250,6 +250,30 @@ button:hover .icon-right.after:before {
     text-decoration: none;
 }
 
+span.f {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+footer {
+    height: 1%;
+    padding: 5%;
+    margin-top: 5%;
+    background-color: rgb(28, 0, 52);
+    align-self: center, auto;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    color: aliceblue;
+    /* align-items: center;
+        justify-content: center; */
+}
+
+a {
+    color: rgb(181, 220, 255);
+}
+
 .compulsory {
     color: red;
 }
