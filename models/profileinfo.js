@@ -60,6 +60,14 @@ const profileinfoSchema = new mongoose.Schema({
     favbook: {
         type: String,
         require: true
+    },
+    pfp: {
+        type: String,
+        require: true
+    },
+    followers: {
+        type: Array,
+        require: true
     }
 });
 

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="EditProfile.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title id="Title">
+
+    </title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo"><img class="logoimg" src="..\.\Pics\rainbow peeps.png" /></div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li class="tree">
+                    <a href="/">Forums</a>
+                    <!-- DROPDOWN MENU -->
+                    <ul class="dropdown">
+                        <li><a href="/">Member Introduction </a></li>
+                        <li><a href="/">Finding Friends</a></li>
+                        <li><a href="/">LGBTQ+ discussions & Advice</a></li>
+                        <li><a href="/">Mental Health</a></li>
+                        <li><a href="/">General Chat</a></li>
+                    </ul>
+                </li>
+                <li><img src="..\.\Pics\icons8-notification-sf-black-filled-32.png" /></li>
+                <li><img src="..\.\Pics\icons8-messages-ios-glyph-32.png" /></li>
+                <li><a href="/">Profile</a></li>
+                <li><a href="/">Logout</a></li>
+            </div>
+        </ul>
+    </nav>
+    <h5>Home > Edit Profile</h5><br />
+    <h2>Edit Profile</h2><br/>
+
+    <div class="wrap">
+        <div class="layer" id="opaque">
+            <form>
+                <label for="name">Name*:</label><br/>
+                <input type="text" value="" id="nameInput" required/><br/><br/>
+
+
+
+                <label for="dob" value=""> Date of Birth:</label><br/>
+                <input type="date" id="dobInput" /><br/><br/>
+                <label for="gender">Gender Identity<i class="compulsory">*</i> :</label><br/>
+                <select name="gender" id="genderInput">
+            <option value ="null" disabled selected> -- select an option -- </option>
+            <option value="Male/Man" id="">Male/Man</option>
+            <option value="Female/Woman" id="">Female/Woman</option>
+            <option value="Trans Male" id="">Trans Male</option>
+            <option value="Trans Female" id="">Trans Female</option>
+            <option value="Questioning" id="">Questioning</option>
+            <option value="Genderqueer/ Gender non-conforming/ Genderfluid" id="">Genderqueer/ Gender non-conforming/ Genderfluid</option>
+          </select><br/><br/>
+                <label for="pronoun">Gender Pronouns<i class="compulsory">*</i> :</label><br/>
+                <select name="pronoun" id="pronounsInput">
+      <option value ="null" disabled selected value> -- select an option -- </option>
+            <option value="He/Him" >He/Him</option>
+            <option value="She/Her">She/Her</option>
+            <option value="They/Them/Theirs">They/Them/Theirs</option>
+            <option value="Ze/Zir/Zirs">Ze/Zir/Zirs</option>
+            <option value="My Name">My Name</option>
+          </select><br/><br/>
+                <label for="rorientation">Romantic Orientation<i class="compulsory">*</i> :</label><br/>
+                <select name="rorientation" id="rorientationInput">
+      <option value ="null" disabled selected value> -- select an option -- </option>
+      <option value="Homoromantic">Homoromantic</option>
+      <option value="Heteroromantic">Heteroromantic</option>
+      <option value="Biroromantic">Biromantic</option>
+      <option value="Demiroromantic">demiromantic</option>
+      <option value="Arororomantic">Aromantic</option>
+      <option value="Panroromantic">Panromantic</option>
+      <option value="Questioning">Questioning</option>
+          </select><br/><br/>
+                <label for="sorientation">Sexual Orientation<i class="compulsory">*</i> :</label><br/>
+                <select name="sorientation" id="sorientationInput">
+      <option value ="null" disabled selected value> -- select an option -- </option>
+            <option value="Gay">Gay</option>
+            <option value="Lesbian">Lesbian</option>
+            <option value="Bisexual">Bisexual</option>
+            <option value="Queer">Queer</option>
+            <option value="Asexual">Asexual</option>
+            <option value="Pansexual">Pansexual</option>
+            <option value="Questioning">Questioning</option>
+            <option value="Straight">Straight</option>
+          </select><br/><br/>
+
+
+                <label for="about">About:</label><br />
+                <textarea name="about" value="" id="aboutInput"></textarea><br/><br/>
+                <label for="personality">Personality:</label><br/>
+                <textarea name="personality" value="" id="personalityInput"></textarea><br/><br/>
+                <label for="interest">Interest:</label><br/>
+                <textarea name="interest" value="" id="interestInput"></textarea><br /><br/>
+                <label for="favmusic">Favourite Music:</label><br/>
+                <textarea name="favmusic" value="" id="favmusicInput"></textarea><br /><br/>
+                <label for="favmovie">Favourite Movie:</label><br/>
+                <textarea name="favmovie" value="" id="favmovieInput"></textarea><br /><br/>
+                <label for="favseries">Favourite TV Shows/ Web Series:</label><br/>
+                <textarea name="favseries" value="" id="favseriesInput"></textarea><br /><br/>
+                <label for="favbook">Favourite Book:</label><br/>
+                <textarea name="favbook" value="" id="favbookInput"></textarea><br /><br /><br />
+
+            </form><br/><br/>
+        </div><br/><br/>
+        <div class="btn from-left" id="finish">FINISH</div>
+    </div>
+
+    <footer>
+        <span class="f"><center>Made with ❤️ & 🏳️‍🌈<br> By a member of the community</center></span>
+        <span class="f"><h3>Contact Us:</h3><br><br><h4>Email:</h4><br>rainbowpeeps57@gmail.com</span>
+        <span class="f"><h3>Links:</h3><br><br><a href="..\.\Contents\About.html">About us</a><br><br><a href="..\.\Contents\Guidelines.html">Community Guidelines</a></span>
+    </footer>
+    <script src="EditProfile.js"></script>
+</body>
+
+
+</html>

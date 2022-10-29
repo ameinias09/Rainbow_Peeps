@@ -1,4 +1,44 @@
-const id = "6358c4cc81a4e755958c298e"
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+const pfp = "0";
+document.getElementById("pfp0").addEventListener('click', e => { pfp = "0" })
+document.getElementById("pfp2").addEventListener('click', e => { pfp = '2' })
+document.getElementById("pfp3").addEventListener('click', e => { pfp = '3' })
+document.getElementById("pfp4").addEventListener('click', e => { pfp = '4' })
+document.getElementById("pfp5").addEventListener('click', e => { pfp = '5' })
+document.getElementById("pfp6").addEventListener('click', e => { pfp = '6' })
+document.getElementById("pfp7").addEventListener('click', e => { pfp = '7' })
+document.getElementById("pfp8").addEventListener('click', e => { pfp = '8' })
+document.getElementById("pfp9").addEventListener('click', e => { pfp = '9' })
+document.getElementById("pfp10").addEventListener('click', e => { pfp = '10' })
+document.getElementById("pfp11").addEventListener('click', e => { pfp = '11' })
+document.getElementById("pfp1").addEventListener('click', e => { pfp = '1' })
+
+
+const id = "635d3bbf698f58c6ab18b0bb"
 fetch('http://localhost:3000/Profile', {
         method: 'POST', // or 'PUT'
         headers: {
@@ -20,6 +60,7 @@ fetch('http://localhost:3000/Profile', {
         about.innerText = "" + data.about
         const br = document.createElement("br")
         const info = document.getElementById("Info")
+        document.getElementById("Followers").innerText = "Followers: " + data.followers.length
         document.getElementById("Gender").innerText = "Gender: " + data.gender
         document.getElementById("Pronouns").innerText = "Pronouns: "
         document.getElementById("Dob").innerText = "Date of Birth: " + data.dob
