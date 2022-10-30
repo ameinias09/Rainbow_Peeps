@@ -38,13 +38,44 @@ app.post('/Profile', async(req, res) => {
     console.log("inside")
     try {
         const user = await profileinfo.findOne({ _id: req.body.id })
+        await profileinfo.updateOne({ _id: req.body.id }, {
+            $set: {
+                pfp: req.body.pfp
+            }
+        })
         res.status(200).send(user)
     } catch (error) {
         console.log(error)
         res.status(400).send(error);
     }
 })
-
+app.post('/EditProfile', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await profileinfo.findOne({ _id: req.body.id })
+        await profileinfo.updateOne({ _id: req.body.id }, {
+            $set: {
+                name: req.body.name,
+                dob: req.body.dob,
+                gender: req.body.gender,
+                pronouns: req.body.pronouns,
+                rorientation: req.body.rorientation,
+                sorientation: req.body.sorientation,
+                about: req.body.about,
+                personality: req.body.personality,
+                interest: req.body.interest,
+                favmusic: req.body.favmusic,
+                favmovie: req.body.favmovie,
+                favseries: req.body.favseries,
+                favbook: req.body.favbook,
+            }
+        })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
 app.post('/ProfileInfo', async(req, res) => {
     console.log("inside profileinfo")
     const data_add = new profileinfo(req.body)

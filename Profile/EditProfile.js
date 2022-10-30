@@ -23,3 +23,59 @@ fetch('http://localhost:3000/Profile', {
         document.getElementById("favseriesInput").value = data.favseries
         document.getElementById("favbookInput").value = data.favbook
     })
+
+
+
+
+const btn = document.getElementById("finish");
+btn.addEventListener('click', e => {
+    console.log('inside');
+
+    const namepr = document.getElementById("nameInput");
+    const dob = document.getElementById("dobInput");
+    const gender = document.getElementById("genderInput");
+    const pronouns = document.getElementById("pronounsInput");
+    const rorientation = document.getElementById("rorientationInput");
+    const sorientation = document.getElementById("sorientationInput");
+    const about = document.getElementById('aboutInput');
+    const personality = document.getElementById('personalityInput');
+    const interest = document.getElementById('interestInput');
+    const favmusic = document.getElementById('favmusicInput');
+    const favmovie = document.getElementById('favmovieInput');
+    const favseries = document.getElementById('favseriesInput');
+    const favbook = document.getElementById('favbookInput');
+
+    if (gender.value == "null" || pronouns.value === "null" || rorientation.value === "null" || sorientation.value == "null" || namepr.value == "") {
+        alert("All fields marked * are compulsory!!");
+        return false;
+    }
+
+    fetch('http://localhost:3000/EditProfile', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id,
+                name: namepr.value,
+                dob: dob.value,
+                gender: gender.value,
+                pronouns: pronouns.value,
+                rorientation: rorientation.value,
+                sorientation: sorientation.value,
+                about: about.value,
+                personality: personality.value,
+                interest: interest.value,
+                favmusic: favmusic.value,
+                favmovie: favmovie.value,
+                favseries: favseries.value,
+                favbook: favbook.value,
+            }),
+        })
+        .then(res => {
+            return res.json()
+        })
+        .then(data => console.log(data))
+
+    // window.location.href = "../Contents/Forum.html";
+})

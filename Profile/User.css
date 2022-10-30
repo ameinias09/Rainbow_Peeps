@@ -155,19 +155,121 @@ input[type=checkbox] {
 
 /* MAIN CONTENT */
 
-.box {
-    background-color: rgba(0, 74, 202, 0.226);
+.dp {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    margin-left: 15%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-right: 70px;
+    border-radius: 50%;
+}
+
+.dp:hover {
+    cursor: pointer;
+}
+
+.pfp {
+    height: 200px;
+    width: 200px;
+    padding: 50px;
+}
+
+.pfp:hover {
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.followers {
+    font-weight: normal;
+    padding: 20px;
+}
+
+.name {
+    margin-top: 70px;
     color: aliceblue;
     width: 74%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.info {
+    /* position: absolute; */
+    background-color: rgba(0, 74, 202, 0.226);
+    color: aliceblue;
+    width: 350px;
+    padding: 5%;
+    border-radius: 2%;
+}
+
+.about {
+    background-color: rgba(0, 74, 202, 0.226);
+    color: aliceblue;
+    width: 35vw;
     padding: 10%;
     padding-top: 5%;
     border-radius: 2%;
 }
 
-img.icon {
-    float: left;
+.post {
+    margin-top: 10vh;
+    background-color: rgba(0, 74, 202, 0.226);
+    color: aliceblue;
+    width: 30vw;
+    padding: 10%;
+    padding-top: 5%;
+    border-radius: 2%;
 }
 
 h5 {
@@ -178,41 +280,6 @@ h5 {
 
 h2 {
     margin-left: 13%;
-}
-
-.topic {
-    margin: 5px;
-    margin-left: 15%;
-    font-size: 3.5ch;
-    color: rgb(98, 98, 255);
-    font-weight: bold;
-}
-
-.smallbox {
-    background-color: rgba(0, 22, 61, 0.695);
-    margin-top: 80px;
-    padding: 20px;
-    border-radius: 18px;
-    color: aliceblue;
-}
-
-.smallbox:hover {
-    cursor: pointer;
-}
-
-.description {
-    margin-top: 5px;
-    margin-bottom: 55px;
-    margin-left: 15%;
-    font-size: 2.2ch;
-}
-
-footer {
-    height: 1%;
-    padding: 5%;
-    margin-top: 5%;
-    background-color: rgb(28, 0, 52);
-    ;
 }
 
 span.f {
@@ -240,13 +307,58 @@ a {
     color: rgb(181, 220, 255);
 }
 
+
+/* wrapper */
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+}
+
+.wrapper {
+    width: 75vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2vw;
+    margin-top: 15vh;
+}
+
+.stackWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* wrapper */
+
+@media (max-width: 1000px) {
+    .about,
+    .post {
+        width: 75vw;
+        margin-top: 5vh;
+    }
+    .about {
+        margin-top: 2vh;
+    }
+}
+
 @media (max-width: 768px) {
-    .smallbox {
-        background-color: transparent;
-        margin-top: 0px;
-        padding: 0px;
-        border-radius: 0px;
+    .dp {
+        position: static;
+        margin-left: 30%;
+    }
+    .name {
+        margin-top: 20px;
         color: aliceblue;
+        width: 74%;
+        margin-left: auto;
+        margin-right: auto;
     }
     img.icon {
         float: none;
@@ -254,5 +366,9 @@ a {
         width: 75px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .stackWrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
