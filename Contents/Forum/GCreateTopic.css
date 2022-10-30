@@ -155,64 +155,68 @@ input[type=checkbox] {
 
 /* MAIN CONTENT */
 
-.box {
-    background-color: rgba(0, 74, 202, 0.226);
-    color: aliceblue;
-    width: 74%;
+div.layer {
+    padding: 2% 8% 2% 8%;
+    width: 40%;
+    align-self: center, auto;
+    margin-top: 8%;
     margin-left: auto;
     margin-right: auto;
-    padding: 10%;
-    padding-top: 5%;
-    border-radius: 2%;
-}
-
-img.icon {
-    float: left;
-}
-
-h5 {
-    margin-top: 10px;
-    margin-left: 13%;
-    color: #476483;
-}
-
-h2 {
-    margin-left: 13%;
-}
-
-.topic {
-    margin: 5px;
-    margin-left: 15%;
-    font-size: 3.5ch;
-    color: rgb(98, 98, 255);
-    font-weight: bold;
-}
-
-.smallbox {
-    background-color: rgba(0, 22, 61, 0.695);
-    margin-top: 80px;
-    padding: 20px;
+    display: flex;
+    background-color: rgba(0, 74, 202, 0.226);
     border-radius: 18px;
     color: aliceblue;
+    align-items: center;
+    justify-content: center;
 }
 
-.smallbox:hover {
-    cursor: pointer;
+input {
+    position: static;
+    margin: 1% 0%;
+    padding: 5px 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+    background-color: rgb(26, 26, 26, 0.4);
+    color: aliceblue;
+    border: 0.5px solid rgb(0, 0, 0, 0);
+    font-size: 1.1em;
 }
 
-.description {
-    margin-top: 5px;
-    margin-bottom: 55px;
-    margin-left: 15%;
-    font-size: 2.2ch;
+input::placeholder {
+    opacity: 0.6;
 }
 
-footer {
-    height: 1%;
-    padding: 5%;
-    margin-top: 5%;
-    background-color: rgb(28, 0, 52);
-    ;
+input:focus {
+    outline: none;
+    border-bottom: 0.5px solid white;
+}
+
+select {
+    margin: 1% 0%;
+    padding: 0.5%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    width: 70%;
+}
+
+textarea {
+    position: static;
+    height: 60px;
+    width: 300px;
+    margin: 1% 0%;
+    padding: 5px 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+    background-color: rgb(26, 26, 26, 0.4);
+    color: aliceblue;
+    border: 0.5px solid rgb(0, 0, 0, 0);
+    font-size: 1.1em;
+}
+
+h5,
+h2 {
+    margin-left: 10vh;
+    margin-top: 2vh;
 }
 
 span.f {
@@ -241,13 +245,6 @@ a {
 }
 
 @media (max-width: 768px) {
-    .smallbox {
-        background-color: transparent;
-        margin-top: 0px;
-        padding: 0px;
-        border-radius: 0px;
-        color: aliceblue;
-    }
     img.icon {
         float: none;
         display: block;

@@ -6,9 +6,12 @@ const bcrypt = require('bcrypt')
 app.use(express.json());
 const mongoose = require('mongoose')
 const cookieParser = require("cookie-parser")
-const { signup } = require('./models/signup')
-const { basicinfo } = require('./models/basicinfo')
 const { profileinfo } = require('./models/profileinfo')
+const { generalchat } = require('./models/generalchat')
+const { findingfriend } = require('./models/findingfriend')
+const { lgbtq } = require('./models/lgbtq')
+const { memberintroduction } = require('./models/memberintroduction')
+const { mentalhealth } = require('./models/mentalhealth')
 
 app.use(cookieParser())
 mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?retryWrites=true&w=majority').then(() => {
@@ -111,4 +114,118 @@ app.post('/Login', async(req, res) => {
         res.status(400).send()
     }
 })
+
+app.post('/GeneralChat', async(req, res) => {
+    console.log("inside general chat")
+    const data_add = new generalchat(req.body)
+    try {
+        console.log(data_add)
+        await data_add.save()
+        res.json(data_add)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error);
+    }
+})
+app.post('/findingfriend', async(req, res) => {
+    console.log("inside")
+    const data_add = new findingfriend(req.body)
+    try {
+        console.log(data_add)
+        await data_add.save()
+        res.json(data_add)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error);
+    }
+})
+app.post('/lgbtq', async(req, res) => {
+    console.log("inside ")
+    const data_add = new lgbtq(req.body)
+    try {
+        console.log(data_add)
+        await data_add.save()
+        res.json(data_add)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error);
+    }
+})
+app.post('/memberintroduction', async(req, res) => {
+    console.log("inside ")
+    const data_add = new memberintroduction(req.body)
+    try {
+        console.log(data_add)
+        await data_add.save()
+        res.json(data_add)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error);
+    }
+})
+app.post('/mentalhealth', async(req, res) => {
+    console.log("inside ")
+    const data_add = new mentalhealth(req.body)
+    try {
+        console.log(data_add)
+        await data_add.save()
+        res.json(data_add)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error);
+    }
+})
+
+
+app.post('/Introduction', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await memberintroduction.find({ topic: true })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/General', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.find({ topic: true })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/Lgbtq', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await lgbtq.find({ topic: true })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/MentalHealth', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await mentalhealth.find({ topic: true })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/Social', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await findingfriend.find({ topic: true })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+
 app.listen(3000)
