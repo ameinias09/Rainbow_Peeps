@@ -1,6 +1,6 @@
 const id = "iusa78uashiaiaiciiiczx9988cix"
 
-fetch('http://localhost:3000/Lgbtq', {
+fetch('http://localhost:3000/lgbt', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

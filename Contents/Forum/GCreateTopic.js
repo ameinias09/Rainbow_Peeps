@@ -26,7 +26,7 @@ btn.addEventListener('click', e => {
         })
         .then(data => console.log(data))
 
-    // window.location.href = "../Contents/Forum.html";
+    window.location.replace("General.html")
 })
 
 // method: 'POST', // or 'PUT'

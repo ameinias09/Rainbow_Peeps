@@ -27,3 +27,6 @@ fetch('http://localhost:3000/General', {
         }
 
     })
+document.getElementById("newPost").addEventListener('click', e => {
+    window.location.href = "GCreateTopic.html"
+})

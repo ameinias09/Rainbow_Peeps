@@ -197,7 +197,7 @@ app.post('/General', async(req, res) => {
         res.status(400).send(error);
     }
 })
-app.post('/Lgbtq', async(req, res) => {
+app.post('/lgbt', async(req, res) => {
     console.log("inside")
     try {
         const user = await lgbtq.find({ topic: true })
@@ -207,7 +207,7 @@ app.post('/Lgbtq', async(req, res) => {
         res.status(400).send(error);
     }
 })
-app.post('/MentalHealth', async(req, res) => {
+app.post('/mentalhelp', async(req, res) => {
     console.log("inside")
     try {
         const user = await mentalhealth.find({ topic: true })

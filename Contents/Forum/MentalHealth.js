@@ -1,6 +1,6 @@
 const id = "iusa78uashiaiaiciiiczx9988cix"
 
-fetch('http://localhost:3000/MentalHealth', {
+fetch('http://localhost:3000/mentalhelp', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

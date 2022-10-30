@@ -168,6 +168,8 @@ div.layer {
     color: aliceblue;
     align-items: center;
     justify-content: center;
+    width: 75%;
+    height: 50vh;
 }
 
 input {
@@ -211,6 +213,8 @@ textarea {
     color: aliceblue;
     border: 0.5px solid rgb(0, 0, 0, 0);
     font-size: 1.1em;
+    height: 30vh;
+    width: 80vh;
 }
 
 h5,
