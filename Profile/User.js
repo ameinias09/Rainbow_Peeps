@@ -1,6 +1,7 @@
 var changepfp = false
-
-const id = "635d3bbf698f58c6ab18b0bb"
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('user');
+const id = myParam
 fetch('http://localhost:3000/Profile', {
         method: 'POST', // or 'PUT'
         headers: {

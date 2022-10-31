@@ -82,7 +82,8 @@ btn.addEventListener('click', e => {
                 favseries: favseries.value,
                 favbook: favbook.value,
                 pfp: "0",
-                followers: []
+                followers: [],
+
             }),
         })
         .then(res => {

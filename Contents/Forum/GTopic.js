@@ -34,6 +34,7 @@ fetch('http://localhost:3000/GTopic', {
                 document.getElementById("authorpfp").src = "..\\..\\.\\Pics\\pfp\\" + user.pfp + ".webp"
                 document.getElementById('authorName').innerText = user.name
 
+
             })
     })
 
@@ -54,7 +55,8 @@ fetch('http://localhost:3000/GSubTopic', {
         for (var i = 0; i < data.length; i++) {
             const postContent = data[i].post
             const post = document.createElement("p")
-            const author = document.createElement("p")
+            const author = document.createElement("a")
+            author.href = "../.././Profile/User.html?user=" + data.author
             post.style = "margin-top: 3vh;"
             post.innerText = " " + postContent
             parent.insertBefore(post, document.getElementById("below"))
