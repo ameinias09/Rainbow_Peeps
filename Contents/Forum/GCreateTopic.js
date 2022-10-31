@@ -1,4 +1,4 @@
-const id = "267263672762yhdssy7dsyh"
+const id = "635d3bbf698f58c6ab18b0bb"
 const btn = document.getElementById("submit");
 btn.addEventListener('click', e => {
     console.log('inside');
@@ -14,6 +14,7 @@ btn.addEventListener('click', e => {
                 post: post.value,
                 author: id,
                 topic: true,
+                sub: "",
                 like: [],
                 love: [],
                 wow: [],

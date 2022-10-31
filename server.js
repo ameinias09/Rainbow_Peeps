@@ -227,5 +227,36 @@ app.post('/Social', async(req, res) => {
         res.status(400).send(error);
     }
 })
+app.post('/User', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await profileinfo.findOne({ _id: req.body.id })
 
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+
+app.post('/GTopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.findOne({ _id: req.body.id })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/GSubTopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.find({ sub: req.body.id })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
 app.listen(3000)

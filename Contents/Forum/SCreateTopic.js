@@ -14,6 +14,7 @@ btn.addEventListener('click', e => {
                 post: post.value,
                 author: id,
                 topic: true,
+                sub: "",
                 like: [],
                 love: [],
                 wow: [],

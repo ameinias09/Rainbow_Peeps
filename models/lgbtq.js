@@ -13,6 +13,10 @@ const lgbtqSchema = new mongoose.Schema({
         type: Boolean,
         require: true
     },
+    sub: {
+        type: String,
+        require: true
+    },
     like: {
         type: Array,
         required: false
