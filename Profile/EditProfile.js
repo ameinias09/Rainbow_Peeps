@@ -5,7 +5,6 @@ for (var i = 0; i < cookieArr.length; i++) {
     const cookie = cookieArr[i].split("=")
     if (cookie[0] == "id") {
         id = cookie[1]
-        document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     }
 }
 fetch('http://localhost:3000/Profile', {
@@ -86,5 +85,5 @@ btn.addEventListener('click', e => {
         })
         .then(data => console.log(data))
 
-    // window.location.href = "../Contents/Forum.html";
+    window.location.replace("./Profile.html")
 })

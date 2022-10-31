@@ -118,4 +118,5 @@ document.getElementById('submit').addEventListener('click', e => {
             return response.json();
         })
         .then((data) => { console.log(data) })
+    window.location.reload();
 })
