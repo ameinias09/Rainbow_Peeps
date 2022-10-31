@@ -208,12 +208,17 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
+
         })
 
         document.getElementById("pfp9").addEventListener('click', e => {

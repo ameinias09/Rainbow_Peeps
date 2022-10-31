@@ -166,18 +166,10 @@ input[type=checkbox] {
     border-radius: 50%;
 }
 
-.dp:hover {
-    cursor: pointer;
-}
-
 .pfp {
     height: 200px;
     width: 200px;
     padding: 50px;
-}
-
-.pfp:hover {
-    cursor: pointer;
 }
 
 .modal {

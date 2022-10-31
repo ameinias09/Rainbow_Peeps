@@ -50,34 +50,37 @@ fetch('http://localhost:3000/GSubTopic', {
         return response.json();
     })
     .then((data) => {
+        const parent = document.getElementById("box")
         for (var i = 0; i < data.length; i++) {
-            topic.innerText = data.post
-            fetch('http://localhost:3000/User', {
-                    method: 'POST', // or 'PUT'
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        id: data[i].author,
-                    }),
-                })
-                .then((response) => {
-                    return response.json();
-                })
-                .then((user) => {
+            const postContent = data[i].post
+            const post = document.createElement("p")
+            const author = document.createElement("p")
+            post.style = "margin-top: 3vh;"
+            post.innerText = " " + postContent
+            parent.insertBefore(post, document.getElementById("below"))
+            author.innerText = ": " + data[i].authorname
+            parent.insertBefore(author, document.getElementById("below"))
 
-                    const dp = document.createElement("img")
-                    const author = document.createElement("p")
-                    const post = document.createElement("p")
-                    dp.class = "dp"
-                    dp.src = "..\\..\\.\\Pics\\pfp\\" + user.pfp + ".webp"
-                    author.innerText = ": " + user.name
-                    post.innerText = "        " + data[i].post
-                })
+
+
         }
     })
-
-
+var authorname = ""
+fetch('http://localhost:3000/User', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: id,
+        }),
+    })
+    .then((response) => {
+        return response.json();
+    })
+    .then((user) => {
+        authorname = user.name
+    })
 const post = document.getElementById("subPostInput")
 document.getElementById('submit').addEventListener('click', e => {
     fetch('http://localhost:3000/GeneralChat', {
@@ -88,8 +91,9 @@ document.getElementById('submit').addEventListener('click', e => {
             body: JSON.stringify({
                 post: post.value,
                 author: id,
+                authorname: authorname,
                 topic: false,
-                Sub: myParam,
+                sub: myParam,
                 like: [],
                 love: [],
                 wow: [],

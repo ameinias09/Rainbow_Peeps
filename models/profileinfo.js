@@ -21,7 +21,7 @@ const profileinfoSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    pronoun: {
+    pronouns: {
         type: String,
         require: true
     },

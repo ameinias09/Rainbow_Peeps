@@ -20,10 +20,7 @@ li {
     list-style: none;
 }
 
-span.f {
-    padding-left: 10%;
-    padding-right: 10%;
-}
+span.f {}
 
 footer {
     height: 1%;
@@ -36,8 +33,8 @@ footer {
     margin-right: auto;
     display: flex;
     color: aliceblue;
-    /* align-items: center;
-        justify-content: center; */
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 a {
@@ -89,18 +86,27 @@ img.logoimg {
 
 /*Main content */
 
-img.lgbt {
+
+/* img.lgbt {
     height: 80vh;
     width: 100%;
     position: absolute;
     z-index: -5;
+} */
+
+.imgWrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url('Pics\\LGBT.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 20vh;
+    padding-top: 20vh;
+    padding-bottom: 25vh;
 }
 
-.main {
-    margin-left: 20vh;
-    margin-top: 20vh;
-    margin-bottom: 25vh;
-}
+.main {}
 
 h1 {
     font-size: 5em;

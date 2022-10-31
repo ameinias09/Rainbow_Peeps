@@ -252,7 +252,9 @@ app.post('/GTopic', async(req, res) => {
 app.post('/GSubTopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.find({ sub: req.body.id })
+        const user = await generalchat.find({ sub: req.body.id }).sort({
+            _id: 1
+        })
         res.status(200).send(user)
     } catch (error) {
         console.log(error)

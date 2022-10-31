@@ -9,6 +9,10 @@ const mentalhealthSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    authorname: {
+        type: String,
+        require: true
+    },
     topic: {
         type: Boolean,
         require: true
