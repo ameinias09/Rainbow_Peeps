@@ -15,7 +15,8 @@ fetch('http://localhost:3000/GTopic', {
         return response.json();
     })
     .then((data) => {
-
+        const redirect = document.getElementById('redirect')
+        redirect.href = "../.././Profile/User.html?user=" + data.author
         topic.innerText = data.post
         fetch('http://localhost:3000/User', {
                 method: 'POST', // or 'PUT'
@@ -51,12 +52,13 @@ fetch('http://localhost:3000/GSubTopic', {
         return response.json();
     })
     .then((data) => {
+        console.log(data)
         const parent = document.getElementById("box")
         for (var i = 0; i < data.length; i++) {
             const postContent = data[i].post
             const post = document.createElement("p")
             const author = document.createElement("a")
-            author.href = "../.././Profile/User.html?user=" + data.author
+            author.href = "../.././Profile/User.html?user=" + data[i].author
             post.style = "margin-top: 3vh;"
             post.innerText = " " + postContent
             parent.insertBefore(post, document.getElementById("below"))

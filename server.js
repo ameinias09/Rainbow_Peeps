@@ -261,4 +261,92 @@ app.post('/GSubTopic', async(req, res) => {
         res.status(400).send(error);
     }
 })
+app.post('/ITopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.findOne({ _id: req.body.id })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/ISubTopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.find({ sub: req.body.id }).sort({
+            _id: 1
+        })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/LTopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.findOne({ _id: req.body.id })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/LSubTopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.find({ sub: req.body.id }).sort({
+            _id: 1
+        })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/STopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.findOne({ _id: req.body.id })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/SSubTopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.find({ sub: req.body.id }).sort({
+            _id: 1
+        })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/MTopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.findOne({ _id: req.body.id })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+app.post('/MSubTopic', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await generalchat.find({ sub: req.body.id }).sort({
+            _id: 1
+        })
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
 app.listen(3000)
