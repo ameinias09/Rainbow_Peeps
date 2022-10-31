@@ -73,12 +73,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
         document.getElementById("pfp2").addEventListener('click', e => {
             pfp = '2'
@@ -93,12 +97,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
         document.getElementById("pfp3").addEventListener('click', e => {
             pfp = '3'
@@ -113,12 +121,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
         document.getElementById("pfp4").addEventListener('click', e => {
             pfp = '4'
@@ -133,12 +145,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
 
         document.getElementById("pfp5").addEventListener('click', e => {
@@ -154,12 +170,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
 
         document.getElementById("pfp6").addEventListener('click', e => {
@@ -175,12 +195,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
 
         document.getElementById("pfp7").addEventListener('click', e => {
@@ -196,12 +220,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
 
         document.getElementById("pfp8").addEventListener('click', e => {
@@ -241,14 +269,17 @@ fetch('http://localhost:3000/Profile', {
                         id: id,
                         pfp: pfp,
                     }),
-                })
-                .then((response) => {
+                }).then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
 
         document.getElementById("pfp10").addEventListener('click', e => {
@@ -264,12 +295,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
 
         document.getElementById("pfp11").addEventListener('click', e => {
@@ -285,12 +320,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
 
         document.getElementById("pfp1").addEventListener('click', e => {
@@ -306,12 +345,16 @@ fetch('http://localhost:3000/Profile', {
                     }),
                 })
                 .then((response) => {
+                    // if (response.status != 200 || response.status != 201 || response.status != 204) {
+                    //     console.log("inside thorw");
+                    //     throw new Error("Couldnt update the profile image");
+                    // }
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data)
+                    console.log("updated");
+                    window.location.reload();
                 })
-            alert("Please refresh page to see changes!!")
         })
 
 
