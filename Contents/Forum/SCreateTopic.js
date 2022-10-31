@@ -13,7 +13,6 @@ btn.addEventListener('click', e => {
             body: JSON.stringify({
                 post: post.value,
                 author: id,
-                authorname: "",
                 topic: true,
                 sub: "",
                 like: [],
