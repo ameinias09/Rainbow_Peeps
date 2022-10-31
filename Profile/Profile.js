@@ -25,7 +25,16 @@ window.onclick = function(event) {
 }
 var changepfp = false
 
-const id = "635d3bbf698f58c6ab18b0bb"
+const cookieArr = document.cookie.split("; ");
+var id = ""
+
+for (var i = 0; i < cookieArr.length; i++) {
+    const cookie = cookieArr[i].split("=")
+    if (cookie[0] == "id") {
+        id = cookie[1]
+    } else
+        alert("Bad Session/Session Expired")
+}
 fetch('http://localhost:3000/Profile', {
         method: 'POST', // or 'PUT'
         headers: {

@@ -7,7 +7,7 @@ btn.addEventListener('click', e => {
         alert("Please fill out all the fields!!");
         return false;
     }
-
+    document.cookie = "email" + "=" + email.value + "" + "; path=/"
     fetch('http://localhost:3000/Login', {
             method: 'POST', // or 'PUT'
             headers: {
@@ -23,8 +23,10 @@ btn.addEventListener('click', e => {
             console.log(res);
             if (res.status == 400)
                 throw new Error("Invalid details")
+            else
+                window.location.replace(".././Contents/Forum.html");
         })
-        .then(data => console.log("data", data))
+        .then(data => {})
         .catch(err => alert(err))
 })
 

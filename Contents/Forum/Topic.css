@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1c1025;
+    font-family: 'Montserrat', sans-serif;
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(28, 0, 52);
+    color: #fff;
+}
+
+.nav-links a {
+    color: #fff;
+}
+
+
+/* LOGO */
+
+img.logoimg {
+    height: 60px;
+    width: 135.2px;
+}
+
+
+/* NAVBAR MENU */
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+
+.menu li:hover {
+    background-color: rgb(42, 0, 80);
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+
+
+/* DROPDOWN MENU */
+
+.tree {
+    position: relative;
+}
+
+.dropdown {
+    background-color: rgb(29, 0, 55);
+    padding: 1em 0;
+    position: absolute;
+    /*WITH RESPECT TO PARENT*/
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+}
+
+.dropdown li+li {
+    margin-top: 10px;
+}
+
+.dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+}
+
+.dropdown li:hover {
+    background-color: rgb(42, 0, 80);
+}
+
+.tree:hover .dropdown {
+    display: block;
+}
+
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+
+
+/* CHECKBOX HACK */
+
+input[type=checkbox] {
+    display: none;
+}
+
+
+/*HAMBURGER MENU*/
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+
+/* APPLYING MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: rgb(28, 0, 52);
+        ;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+    .menu li:hover {
+        display: inline-block;
+        background-color: rgb(42, 0, 80);
+        transition: 0.3s ease;
+    }
+    .menu li+li {
+        margin-top: 12px;
+    }
+    input[type=checkbox]:checked~.menu {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+    .dropdown {
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+    }
+    .dropdown li:hover {
+        background-color: rgb(42, 0, 80);
+    }
+}
+
+
+/* MAIN CONTENT */
+
+.apfp {
+    height: 15vh;
+    width: 15vh;
+    border-radius: 50%;
+    margin-left: 10%;
+    padding: 2vh;
+}
+
+h4 {
+    margin-left: 10%;
+    padding: 2vh;
+}
+
+.box {
+    background-color: rgba(0, 74, 202, 0.226);
+    color: aliceblue;
+    width: 74%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10%;
+    padding-top: 5%;
+    border-radius: 2%;
+}
+
+h5 {
+    margin-top: 10px;
+    margin-left: 13%;
+    color: #476483;
+}
+
+h2 {
+    margin-left: 13%;
+}
+
+button {
+    padding: 2px;
+}
+
+textarea {
+    padding: 5px 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+    background-color: rgb(26, 26, 26, 0.4);
+    color: aliceblue;
+    border: 0.5px solid rgb(0, 0, 0, 0);
+    font-size: 1.1em;
+    width: 40%;
+}
+
+span.f {
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+footer {
+    height: 1%;
+    padding: 5%;
+    margin-top: 5%;
+    background-color: rgb(28, 0, 52);
+    align-self: center, auto;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    color: aliceblue;
+    flex-wrap: wrap;
+    /* align-items: center;
+        justify-content: center; */
+}
+
+a {
+    color: rgb(181, 220, 255);
+}
+
+@media (max-width: 768px) {}

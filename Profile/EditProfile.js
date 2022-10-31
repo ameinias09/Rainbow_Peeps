@@ -1,4 +1,14 @@
-const id = "6358c4cc81a4e755958c298e"
+const cookieArr = document.cookie.split("; ");
+var id = ""
+
+for (var i = 0; i < cookieArr.length; i++) {
+    const cookie = cookieArr[i].split("=")
+    if (cookie[0] == "id") {
+        id = cookie[1]
+        document.cookie = cookie[0] + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    } else
+        alert("Bad Session/Session Expired")
+}
 fetch('http://localhost:3000/Profile', {
         method: 'POST', // or 'PUT'
         headers: {

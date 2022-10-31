@@ -89,7 +89,10 @@ btn.addEventListener('click', e => {
         .then(res => {
             return res.json()
         })
-        .then(data => console.log(data))
+        .then(data => {
+            document.cookie = "email" + "=" + email + "" + "; path=/"
+            window.location.replace(".././Contents/Forum.html");
+        })
 
     // window.location.href = "../Contents/Forum.html";
 })
