@@ -6,9 +6,14 @@ for (var i = 0; i < cookieArr.length; i++) {
     if (cookie[0] == "email") {
         email = cookie[1]
     } else
-        alert("Bad Session/Session Expired")
+    if (cookie[0] == "email") {
+        if (cookie[1] == "") {
+            alert("Bad Session/ You are Logged Out!!")
+            window.location.replace("../index.html")
+        }
+    }
 }
-
+console.log(email)
 fetch('http://localhost:3000/UserByEmail', {
         method: 'POST', // or 'PUT'
         headers: {
@@ -22,6 +27,11 @@ fetch('http://localhost:3000/UserByEmail', {
         return response.json();
     })
     .then((user) => {
-        id = user.id
+        // console.log(user._id)
+        document.cookie = "id" + "=" + user._id + "" + "; path=/"
+
     })
-document.cookie = "id" + "=" + id + "" + "; path=/"
+    .catch(e => {
+        alert("Bad Session")
+    })
+console.log(id)

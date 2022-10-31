@@ -8,8 +8,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     if (cookie[0] == "id") {
         id = cookie[1]
 
-    } else
-        alert("Bad Session/Session Expired")
+    }
 }
 const topic = document.getElementById("topic")
 fetch('http://localhost:3000/STopic', {

@@ -26,15 +26,24 @@ window.onclick = function(event) {
 var changepfp = false
 
 const cookieArr = document.cookie.split("; ");
-var id = ""
 
-for (var i = 0; i < cookieArr.length; i++) {
-    const cookie = cookieArr[i].split("=")
-    if (cookie[0] == "id") {
-        id = cookie[1]
-    } else
-        alert("Bad Session/Session Expired")
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
+const id = getCookie("id")
+
 fetch('http://localhost:3000/Profile', {
         method: 'POST', // or 'PUT'
         headers: {
@@ -361,9 +370,9 @@ fetch('http://localhost:3000/Profile', {
         // profile image
 
 
-        document.getElementById("Followers").innerText = "Followers: " + data.followers.length
+        document.getElementById("Followers").innerText = ""
         document.getElementById("Gender").innerText = "Gender: " + data.gender
-        document.getElementById("Pronouns").innerText = "Pronouns: "
+        document.getElementById("Pronouns").innerText = "Pronouns: " + data.pronouns
         document.getElementById("Dob").innerText = "Date of Birth: " + data.dob
         document.getElementById("Rorientation").innerText = "Romantic Orientation: " + data.rorientation
         document.getElementById("Sorientation").innerText = "Sexual Orientation: " + data.sorientation

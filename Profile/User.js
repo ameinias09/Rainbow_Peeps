@@ -32,9 +32,9 @@ fetch('http://localhost:3000/Profile', {
         // profile image
 
 
-        document.getElementById("Followers").innerText = "Followers: " + data.followers.length
+        document.getElementById("Followers").innerText = ""
         document.getElementById("Gender").innerText = "Gender: " + data.gender
-        document.getElementById("Pronouns").innerText = "Pronouns: "
+        document.getElementById("Pronouns").innerText = "Pronouns: " + data.pronouns
         document.getElementById("Dob").innerText = "Date of Birth: " + data.dob
         document.getElementById("Rorientation").innerText = "Romantic Orientation: " + data.rorientation
         document.getElementById("Sorientation").innerText = "Sexual Orientation: " + data.sorientation

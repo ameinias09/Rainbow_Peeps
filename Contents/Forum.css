@@ -196,10 +196,6 @@ h2 {
     color: aliceblue;
 }
 
-.smallbox:hover {
-    cursor: pointer;
-}
-
 .description {
     margin-top: 5px;
     margin-bottom: 55px;

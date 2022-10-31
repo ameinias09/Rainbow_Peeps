@@ -5,8 +5,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     const cookie = cookieArr[i].split("=")
     if (cookie[0] == "id") {
         id = cookie[1]
-    } else
-        alert("Bad Session/Session Expired")
+    }
 }
 const btn = document.getElementById("submit");
 btn.addEventListener('click', e => {

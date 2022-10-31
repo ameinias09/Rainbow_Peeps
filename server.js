@@ -14,7 +14,7 @@ const { memberintroduction } = require('./models/memberintroduction')
 const { mentalhealth } = require('./models/mentalhealth')
 
 app.use(cookieParser())
-mongoose.connect('mongodb+srv://SDJava:SDJava09@projectrp.6herpzj.mongodb.net/?retryWrites=true&w=majority').then(() => {
+mongoose.connect('mongodb+srv://RainbowPeeps:RainbowPeeps57@rainbowpeeps.gvhsno1.mongodb.net/test').then(() => {
     console.log("Connected")
 }).catch((err) => {
     console.log(err)
@@ -240,6 +240,18 @@ app.post('/User', async(req, res) => {
     }
 })
 
+app.post('/UserByEmail', async(req, res) => {
+    console.log("inside")
+    try {
+        const user = await profileinfo.findOne({ email: req.body.email })
+
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+
 app.post('/GTopic', async(req, res) => {
     console.log("inside")
     try {
@@ -265,7 +277,7 @@ app.post('/GSubTopic', async(req, res) => {
 app.post('/ITopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.findOne({ _id: req.body.id })
+        const user = await memberintroduction.findOne({ _id: req.body.id })
         res.status(200).send(user)
     } catch (error) {
         console.log(error)
@@ -275,7 +287,7 @@ app.post('/ITopic', async(req, res) => {
 app.post('/ISubTopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.find({ sub: req.body.id }).sort({
+        const user = await memberintroduction.find({ sub: req.body.id }).sort({
             _id: 1
         })
         res.status(200).send(user)
@@ -287,7 +299,7 @@ app.post('/ISubTopic', async(req, res) => {
 app.post('/LTopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.findOne({ _id: req.body.id })
+        const user = await lgbtq.findOne({ _id: req.body.id })
         res.status(200).send(user)
     } catch (error) {
         console.log(error)
@@ -297,7 +309,7 @@ app.post('/LTopic', async(req, res) => {
 app.post('/LSubTopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.find({ sub: req.body.id }).sort({
+        const user = await lgbtq.find({ sub: req.body.id }).sort({
             _id: 1
         })
         res.status(200).send(user)
@@ -309,7 +321,7 @@ app.post('/LSubTopic', async(req, res) => {
 app.post('/STopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.findOne({ _id: req.body.id })
+        const user = await findingfriend.findOne({ _id: req.body.id })
         res.status(200).send(user)
     } catch (error) {
         console.log(error)
@@ -319,7 +331,7 @@ app.post('/STopic', async(req, res) => {
 app.post('/SSubTopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.find({ sub: req.body.id }).sort({
+        const user = await findingfriend.find({ sub: req.body.id }).sort({
             _id: 1
         })
         res.status(200).send(user)
@@ -331,7 +343,7 @@ app.post('/SSubTopic', async(req, res) => {
 app.post('/MTopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.findOne({ _id: req.body.id })
+        const user = await mentalhealth.findOne({ _id: req.body.id })
         res.status(200).send(user)
     } catch (error) {
         console.log(error)
@@ -341,7 +353,7 @@ app.post('/MTopic', async(req, res) => {
 app.post('/MSubTopic', async(req, res) => {
     console.log("inside")
     try {
-        const user = await generalchat.find({ sub: req.body.id }).sort({
+        const user = await mentalhealth.find({ sub: req.body.id }).sort({
             _id: 1
         })
         res.status(200).send(user)

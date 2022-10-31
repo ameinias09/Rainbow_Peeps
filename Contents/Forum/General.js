@@ -5,8 +5,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     const cookie = cookieArr[i].split("=")
     if (cookie[0] == "id") {
         id = cookie[1]
-    } else
-        alert("Bad Session/Session Expired")
+    }
 }
 
 fetch('http://localhost:3000/General', {
@@ -28,8 +27,9 @@ fetch('http://localhost:3000/General', {
         for (var i = 0; i < data.length; i++) {
             const br = document.createElement("br")
             const a = document.createElement("a")
+            a.style = "margin-top: 10vh;"
             a.href = "GTopic.html?topic=" + data[i]._id
-            a.innerText = "" + data[i].post
+            a.innerText = "‣ " + data[i].post
             topic.insertBefore(a, document.getElementById("btn"))
             topic.insertBefore(br, document.getElementById("btn"))
             topic.insertBefore(br, a)

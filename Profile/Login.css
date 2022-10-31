@@ -172,8 +172,8 @@ textarea {
 }
 
 span.f {
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-left: 1vh;
+    margin-right: 1vh;
 }
 
 footer {
@@ -187,8 +187,9 @@ footer {
     margin-right: auto;
     display: flex;
     color: aliceblue;
-    /* align-items: center;
-        justify-content: center; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 a {

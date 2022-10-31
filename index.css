@@ -20,8 +20,6 @@ li {
     list-style: none;
 }
 
-span.f {}
-
 footer {
     height: 1%;
     padding: 5%;
@@ -143,4 +141,26 @@ footer {
         justify-content: center; */
 }
 
-@media only screen and (max-width: 780px) {}
+@media only screen and (max-width: 780px) {
+    h1 {
+        font-size: 2em;
+        margin-left: 0vh;
+    }
+    .main {
+        margin-left: 0vh;
+        padding-left: 0vh;
+    }
+    h2.secondt {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    img.logoimg {
+        height: 40px;
+        width: 90.13px;
+    }
+    .imgWrapper {
+        padding: 10vh;
+    }
+}
