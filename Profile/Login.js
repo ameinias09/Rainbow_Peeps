@@ -8,7 +8,7 @@ btn.addEventListener('click', e => {
         return false;
     }
     document.cookie = "email" + "=" + email.value + "" + "; path=/"
-    fetch('http://localhost:3000/Login', {
+    fetch('https://rainbowpeepsbackend.vercel.app/Login', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

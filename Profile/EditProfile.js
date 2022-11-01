@@ -7,7 +7,7 @@ for (var i = 0; i < cookieArr.length; i++) {
         id = cookie[1]
     }
 }
-fetch('http://localhost:3000/Profile', {
+fetch('https://rainbowpeepsbackend.vercel.app/Profile', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ btn.addEventListener('click', e => {
         return false;
     }
 
-    fetch('http://localhost:3000/EditProfile', {
+    fetch('https://rainbowpeepsbackend.vercel.app/EditProfile', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

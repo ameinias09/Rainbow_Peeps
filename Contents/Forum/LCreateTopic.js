@@ -13,7 +13,7 @@ btn.addEventListener('click', e => {
     const post = document.getElementById('postInput');
 
 
-    fetch('http://localhost:3000/lgbtq', {
+    fetch('https://rainbowpeepsbackend.vercel.app/lgbtq', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

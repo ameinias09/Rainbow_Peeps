@@ -8,7 +8,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 
-fetch('http://localhost:3000/lgbt', {
+fetch('https://rainbowpeepsbackend.vercel.app/lgbt', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

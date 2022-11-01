@@ -8,7 +8,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 
-fetch('http://localhost:3000/Social', {
+fetch('https://rainbowpeepsbackend.vercel.app/Social', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

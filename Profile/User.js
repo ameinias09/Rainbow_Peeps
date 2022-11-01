@@ -2,7 +2,7 @@ var changepfp = false
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('user');
 const id = myParam
-fetch('http://localhost:3000/Profile', {
+fetch('https://rainbowpeepsbackend.vercel.app/Profile', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

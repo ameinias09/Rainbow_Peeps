@@ -13,7 +13,7 @@ btn.addEventListener('click', e => {
     document.cookie = "name" + "=" + name.value + "" + "; path=/"
     document.cookie = "password" + "=" + password.value + "" + "; path=/"
 
-    fetch('http://localhost:3000/SignUp', {
+    fetch('https://rainbowpeepsbackend.vercel.app/SignUp', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

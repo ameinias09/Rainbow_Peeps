@@ -8,7 +8,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 
-fetch('http://localhost:3000/Introduction', {
+fetch('https://rainbowpeepsbackend.vercel.app/Introduction', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 const topic = document.getElementById("topic")
-fetch('http://localhost:3000/GTopic', {
+fetch('https://rainbowpeepsbackend.vercel.app/GTopic', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ fetch('http://localhost:3000/GTopic', {
         const redirect = document.getElementById('redirect')
         redirect.href = "../.././Profile/User.html?user=" + data.author
         topic.innerText = data.post
-        fetch('http://localhost:3000/User', {
+        fetch('https://rainbowpeepsbackend.vercel.app/User', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ fetch('http://localhost:3000/GTopic', {
             })
     })
 
-fetch('http://localhost:3000/GSubTopic', {
+fetch('https://rainbowpeepsbackend.vercel.app/GSubTopic', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ fetch('http://localhost:3000/GSubTopic', {
         }
     })
 var authorname = ""
-fetch('http://localhost:3000/User', {
+fetch('https://rainbowpeepsbackend.vercel.app/User', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ fetch('http://localhost:3000/User', {
     })
 const post = document.getElementById("subPostInput")
 document.getElementById('submit').addEventListener('click', e => {
-    fetch('http://localhost:3000/GeneralChat', {
+    fetch('https://rainbowpeepsbackend.vercel.app/GeneralChat', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

@@ -60,7 +60,7 @@ btn.addEventListener('click', e => {
         return false
     }
 
-    fetch('http://localhost:3000/ProfileInfo', {
+    fetch('https://rainbowpeepsbackend.vercel.app/ProfileInfo', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
