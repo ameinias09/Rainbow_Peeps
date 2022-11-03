@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require('cors');
 const app = express()
-    // app.use(cors());
+app.use(cors());
 const bcrypt = require('bcrypt')
 app.use(express.json());
 const mongoose = require('mongoose')
@@ -19,6 +19,17 @@ mongoose.connect('mongodb+srv://RainbowPeeps:RainbowPeeps57@rainbowpeeps.gvhsno1
 }).catch((err) => {
     console.log(err)
 })
+
+
+// const request = require('request');
+
+
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 
 
 app.post('/SignUp', async(req, res) => {
