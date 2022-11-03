@@ -8,7 +8,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 
-fetch('https://rainbowpeepsbackend.vercel.app/mentalhelp', {
+fetch('https://rainbowpeepsbackend.vercel.appmentalhelp', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

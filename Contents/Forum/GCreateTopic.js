@@ -13,7 +13,7 @@ btn.addEventListener('click', e => {
     const post = document.getElementById('postInput');
 
 
-    fetch('https://rainbowpeepsbackend.vercel.app/GeneralChat', {
+    fetch('https://rainbowpeepsbackend.vercel.appGeneralChat', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

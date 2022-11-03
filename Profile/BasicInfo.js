@@ -15,7 +15,7 @@ btn.addEventListener('click', e => {
     document.cookie = "rorientation" + "=" + rorientation.value + "" + "; path=/"
     document.cookie = "pronouns" + "=" + pronouns.value + "" + "; path=/"
     document.cookie = "sorientation" + "=" + sorientation.value + "" + "; path=/"
-        // fetch('https://rainbowpeepsbackend.vercel.app/BasicInfo', {
+        // fetch('https://rainbowpeepsbackend.vercel.appBasicInfo', {
         //         method: 'POST', // or 'PUT'
         //         headers: {
         //             'Content-Type': 'application/json',

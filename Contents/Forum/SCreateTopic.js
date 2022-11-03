@@ -13,7 +13,7 @@ btn.addEventListener('click', e => {
     const post = document.getElementById('postInput');
 
 
-    fetch('https://rainbowpeepsbackend.vercel.app/findingfriend', {
+    fetch('https://rainbowpeepsbackend.vercel.appfindingfriend', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

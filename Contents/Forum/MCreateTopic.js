@@ -13,7 +13,7 @@ btn.addEventListener('click', e => {
     const post = document.getElementById('postInput');
 
 
-    fetch('https://rainbowpeepsbackend.vercel.app/mentalhealth', {
+    fetch('https://rainbowpeepsbackend.vercel.appmentalhealth', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
