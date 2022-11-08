@@ -375,4 +375,4 @@ app.post('/MSubTopic', async(req, res) => {
         res.status(400).send(error);
     }
 })
-app.listen("3000", "rainbowpeepsbackend.vercel.app")
+app.listen("3000")
