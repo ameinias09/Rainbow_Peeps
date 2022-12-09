@@ -34,7 +34,7 @@ app.use((req, res, next) => {
     next();
 });
 
-router.use('/', (req, res) => {
+router.post('/', (req, res) => {
     res.send("Hello")
 })
 
