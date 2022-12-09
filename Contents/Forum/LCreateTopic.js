@@ -13,7 +13,7 @@ btn.addEventListener('click', e => {
     const post = document.getElementById('postInput');
 
 
-    fetch('https://rainbowpeeps.onrender.com//lgbtq', {
+    fetch('https://rainbowpeeps.onrender.com/lgbtq', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

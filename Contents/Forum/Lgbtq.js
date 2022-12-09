@@ -8,7 +8,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 
-fetch('https://rainbowpeeps.onrender.com//lgbt', {
+fetch('https://rainbowpeeps.onrender.com/lgbt', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

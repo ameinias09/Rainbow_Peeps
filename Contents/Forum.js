@@ -14,7 +14,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 console.log(email)
-fetch('https://rainbowpeeps.onrender.com//UserByEmail', {
+fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

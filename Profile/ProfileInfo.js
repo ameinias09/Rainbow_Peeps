@@ -60,7 +60,7 @@ btn.addEventListener('click', e => {
         return false
     }
 
-    fetch('https://rainbowpeeps.onrender.com//ProfileInfo', {
+    fetch('https://rainbowpeeps.onrender.com/ProfileInfo', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

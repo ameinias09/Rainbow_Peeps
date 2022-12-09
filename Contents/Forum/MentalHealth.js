@@ -8,7 +8,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 
-fetch('https://rainbowpeeps.onrender.com//mentalhelp', {
+fetch('https://rainbowpeeps.onrender.com/mentalhelp', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

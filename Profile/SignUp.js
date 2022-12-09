@@ -13,7 +13,7 @@ btn.addEventListener('click', e => {
     document.cookie = "name" + "=" + name.value + "" + "; path=/"
     document.cookie = "password" + "=" + password.value + "" + "; path=/"
 
-    fetch('https://rainbowpeeps.onrender.com//SignUp', {
+    fetch('https://rainbowpeeps.onrender.com/SignUp', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

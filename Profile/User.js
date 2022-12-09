@@ -2,7 +2,7 @@ var changepfp = false
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('user');
 const id = myParam
-fetch('https://rainbowpeeps.onrender.com//Profile', {
+fetch('https://rainbowpeeps.onrender.com/Profile', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
