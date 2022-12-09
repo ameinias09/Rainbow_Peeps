@@ -6,12 +6,12 @@ const bcrypt = require('bcrypt')
 app.use(express.json());
 const mongoose = require('mongoose')
 const cookieParser = require("cookie-parser")
-const { profileinfo } = require('../models/profileinfo')
-const { generalchat } = require('../models/generalchat')
-const { findingfriend } = require('../models/findingfriend')
-const { lgbtq } = require('../models/lgbtq')
-const { memberintroduction } = require('../models/memberintroduction')
-const { mentalhealth } = require('../models/mentalhealth')
+const { profileinfo } = require('./models/profileinfo')
+const { generalchat } = require('./models/generalchat')
+const { findingfriend } = require('./models/findingfriend')
+const { lgbtq } = require('./models/lgbtq')
+const { memberintroduction } = require('./models/memberintroduction')
+const { mentalhealth } = require('./models/mentalhealth')
 
 
 app.use(cookieParser())
@@ -31,11 +31,7 @@ app.use((req, res, next) => {
     next();
 });
 
-<<<<<<< HEAD:api.js
-app.post('/', (req, res) => {
-=======
 app.get('/', (req, res) => {
->>>>>>> parent of bda4639 (Update server.js):server.js
     res.send("Hello")
 })
 
