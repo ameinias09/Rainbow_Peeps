@@ -4,26 +4,20 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "netlify-lambda serve src",
-        "build": "netlify-lambda build src"
+        "start": "nodemon api.js",
+        "build": "src"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "aws-sdk": "^2.1271.0",
         "bcrypt": "^5.1.0",
         "cookie-parser": "^1.4.6",
         "cors": "^2.8.5",
         "ejs": "^3.1.8",
         "express": "^4.18.2",
-        "mock-aws-s3": "^4.0.2",
         "mongodb": "^4.10.0",
-        "mongoose": "^6.6.7",
-        "netlify-lambda": "^2.0.15",
-        "nock": "^13.2.9",
-
-        "serverless-http": "^3.1.0"
+        "mongoose": "^6.6.7"
     },
     "devDependencies": {
         "nodemon": "^2.0.20"
