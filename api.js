@@ -31,7 +31,11 @@ app.use((req, res, next) => {
     next();
 });
 
+<<<<<<< HEAD:api.js
 app.post('/', (req, res) => {
+=======
+app.get('/', (req, res) => {
+>>>>>>> parent of bda4639 (Update server.js):server.js
     res.send("Hello")
 })
 
