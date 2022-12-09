@@ -11,7 +11,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 const topic = document.getElementById("topic")
-fetch('https://rainbowpeepsbackend.vercel.app/STopic', {
+fetch('https://rainbowpeeps.onrender.com//STopic', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ fetch('https://rainbowpeepsbackend.vercel.app/STopic', {
         const redirect = document.getElementById('redirect')
         redirect.href = "../.././Profile/User.html?user=" + data.author
         topic.innerText = data.post
-        fetch('https://rainbowpeepsbackend.vercel.app/User', {
+        fetch('https://rainbowpeeps.onrender.com//User', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ fetch('https://rainbowpeepsbackend.vercel.app/STopic', {
             })
     })
 
-fetch('https://rainbowpeepsbackend.vercel.app/SSubTopic', {
+fetch('https://rainbowpeeps.onrender.com//SSubTopic', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ fetch('https://rainbowpeepsbackend.vercel.app/SSubTopic', {
         }
     })
 var authorname = ""
-fetch('https://rainbowpeepsbackend.vercel.app/User', {
+fetch('https://rainbowpeeps.onrender.com//User', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ fetch('https://rainbowpeepsbackend.vercel.app/User', {
     })
 const post = document.getElementById("subPostInput")
 document.getElementById('submit').addEventListener('click', e => {
-    fetch('https://rainbowpeepsbackend.vercel.app/findingfriend', {
+    fetch('https://rainbowpeeps.onrender.com//findingfriend', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ for (var i = 0; i < cookieArr.length; i++) {
     }
 }
 
-fetch('https://rainbowpeepsbackend.vercel.app/General', {
+fetch('https://rainbowpeeps.onrender.com//General', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

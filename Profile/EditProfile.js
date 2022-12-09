@@ -7,7 +7,7 @@ for (var i = 0; i < cookieArr.length; i++) {
         id = cookie[1]
     }
 }
-fetch('https://rainbowpeepsbackend.vercel.app/Profile', {
+fetch('https://rainbowpeeps.onrender.com//Profile', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ btn.addEventListener('click', e => {
         return false;
     }
 
-    fetch('https://rainbowpeepsbackend.vercel.app/EditProfile', {
+    fetch('https://rainbowpeeps.onrender.com//EditProfile', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
