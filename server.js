@@ -116,6 +116,33 @@ app.post('/Login', async(req, res) => {
     }
 })
 
+app.post('/changePassword', async(req, res) => {
+    try {
+        console.log("inside")
+        const oldPassword = req.body.oldPassword
+        const user = await profileinfo.findOne({ _id: req.body.id })
+
+        const isMatch = await bcrypt.compare(oldPassword, user.password)
+        if (isMatch) {
+            await profileinfo.updateOne({ _id: req.body.id }, {
+                $set: {
+                    password: req.body.newPassword,
+
+                }
+            })
+            res.status(200).send(user)
+        } else {
+            console.log("Invalid Password")
+            res.status(400).send()
+        }
+
+    } catch (error) {
+        console.log("Invalid Email")
+        res.status(400).send()
+    }
+})
+
+
 app.post('/GeneralChat', async(req, res) => {
     console.log("inside general chat")
     const data_add = new generalchat(req.body)
