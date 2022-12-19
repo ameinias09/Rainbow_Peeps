@@ -103,7 +103,7 @@ app.post('/changePassword', async(req, res) => {
         if (isMatch) {
             await profileinfo.updateOne({ _id: req.body.id }, {
                 $set: {
-                    password: req.body.newPassword,
+                    password: await bcrypt.hash(req.body.newPassword, 12),
 
                 }
             })
