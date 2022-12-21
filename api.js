@@ -108,6 +108,7 @@ app.post('/changePassword', async(req, res) => {
             })
             res.status(200).send(user)
         } else {
+            console.log("Error")
             res.status(400).send()
         }
 
@@ -126,12 +127,12 @@ app.post('/editFollower', async(req, res) => {
 
             }
         })
-        res.status(200).send(user)
+        res.status(200).send()
 
 
 
     } catch (error) {
-        console.log("Invalid Email")
+        console.log("Error")
         res.status(400).send()
     }
 })
