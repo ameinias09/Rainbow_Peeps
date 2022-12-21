@@ -71,7 +71,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                             followers: followers,
                         }),
                     })
-                    window.location.replace(location)
+                    fol--
                 } else {
                     followers = followers + visId
                     fetch('https://rainbowpeeps.onrender.com/editFollower', {
@@ -84,7 +84,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                             followers: followers,
                         }),
                     })
-                    window.location.replace(location)
+                    fol++
                 }
             })
             // profile image
