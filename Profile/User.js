@@ -50,16 +50,19 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         //followers
         var fol = data.followers.length
         var Followbtn = document.getElementById("Followbtn")
+        var btn = true;
         if (doesFollow(data.followers, visId)) {
             Followbtn.className = "btn btn-success"
             Followbtn.innerText = "Following"
+            btn = true
         } else {
             Followbtn.className = "btn btn-primary"
             Followbtn.innerText = "Follow"
+            btn = false
         }
         var followers = data.followers
         Followbtn.addEventListener('click', e => {
-                if (doesFollow(data.followers, visId)) {
+                if (btn) {
                     fol--
                     followers.splice(followers.indexOf(visId), 1)
                     fetch('https://rainbowpeeps.onrender.com/editFollower', {
@@ -72,7 +75,10 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                             followers: followers,
                         }),
                     })
-
+                    document.getElementById("Followers").innerText = "Followers: " + fol
+                    btn = false
+                    Followbtn.className = "btn btn-primary"
+                    Followbtn.innerText = "Follow"
                 } else {
                     fol++
                     followers.push(visId)
@@ -86,12 +92,13 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                             followers: followers,
                         }),
                     })
-
+                    document.getElementById("Followers").innerText = "Followers: " + fol
+                    btn = true
+                    Followbtn.className = "btn btn-success"
+                    Followbtn.innerText = "Following"
                 }
             })
             // profile image
-        var pfp = data.pfp;
-
 
         // profile image
 
