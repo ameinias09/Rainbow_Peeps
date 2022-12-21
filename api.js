@@ -115,7 +115,26 @@ app.post('/changePassword', async(req, res) => {
         res.status(400).send()
     }
 })
+app.post('/editFollower', async(req, res) => {
+    try {
 
+
+
+        await profileinfo.updateOne({ _id: req.body.id }, {
+            $set: {
+                followers: req.body.followers
+
+            }
+        })
+        res.status(200).send(user)
+
+
+
+    } catch (error) {
+        console.log("Invalid Email")
+        res.status(400).send()
+    }
+})
 
 app.post('/ProfileInfo', async(req, res) => {
     const data_add = new profileinfo(req.body)
