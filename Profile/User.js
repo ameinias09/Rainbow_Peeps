@@ -2,6 +2,28 @@ var changepfp = false
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('user');
 const id = myParam
+
+const cookieArr = document.cookie.split("; ");
+var visId = ""
+
+for (var i = 0; i < cookieArr.length; i++) {
+    const cookie = cookieArr[i].split("=")
+    if (cookie[0] == "id") {
+        visId = cookie[1]
+    }
+}
+
+function doesFollow(list, i) {
+    var is = false;
+    for (var y = 0; y < list.length; y++) {
+        if (list[y] == i) {
+            is = true
+            break;
+        }
+    }
+    return is
+}
+
 fetch('https://rainbowpeeps.onrender.com/Profile', {
         method: 'POST', // or 'PUT'
         headers: {
@@ -25,14 +47,51 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         document.getElementById("myBtn").src = "..\\.\\Pics\\pfp\\" + data.pfp + ".webp"
         const info = document.getElementById("Info")
 
-        // profile image
+        //followers
+        var fol = data.followers.length
+        var Followbtn = document.getElementById("Followbtn")
+        if (doesFollow(data.followers, visId)) {
+            Followbtn.className = "btn btn-primary"
+            Followbtn.innerText = "Following"
+        } else {
+            Followbtn.className = "btn btn-outline-primary"
+            Followbtn.innerText = "Follow"
+        }
+        var followers = data.followers
+        Followbtn.addEventListener('click', e => {
+                if (doesFollow(data.followers, visId)) {
+                    delete followers(followers.indexOf(visId))
+                    fetch('https://rainbowpeeps.onrender.com/minusFollower', {
+                        method: 'POST', // or 'PUT'
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            followers: followers,
+                        }),
+                    })
+                    location.reload()
+                } else {
+                    fetch('https://rainbowpeeps.onrender.com/addFollower', {
+                        method: 'POST', // or 'PUT'
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            followers: followers + visId,
+                        }),
+                    })
+                    location.reload()
+                }
+            })
+            // profile image
         var pfp = data.pfp;
 
 
         // profile image
 
 
-        document.getElementById("Followers").innerText = ""
+        document.getElementById("Followers").innerText = "Followers: " + fol
         document.getElementById("Gender").innerText = "Gender: " + data.gender
         document.getElementById("Pronouns").innerText = "Pronouns: " + data.pronouns
         document.getElementById("Dob").innerText = "Date of Birth: " + data.dob
