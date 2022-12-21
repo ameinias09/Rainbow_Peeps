@@ -146,17 +146,16 @@ app.post('/editFollower', async(req, res) => {
     try {
 
 
-        if (isMatch) {
-            await profileinfo.updateOne({ _id: req.body.id }, {
-                $set: {
-                    followers: req.body.followers
 
-                }
-            })
-            res.status(200).send(user)
-        } else {
-            res.status(400).send()
-        }
+        await profileinfo.updateOne({ _id: req.body.id }, {
+            $set: {
+                followers: req.body.followers
+
+            }
+        })
+        res.status(200).send(user)
+
+
 
     } catch (error) {
         console.log("Invalid Email")
