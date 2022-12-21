@@ -142,6 +142,27 @@ app.post('/changePassword', async(req, res) => {
     }
 })
 
+app.post('/editFollower', async(req, res) => {
+    try {
+
+
+        if (isMatch) {
+            await profileinfo.updateOne({ _id: req.body.id }, {
+                $set: {
+                    followers: req.body.followers
+
+                }
+            })
+            res.status(200).send(user)
+        } else {
+            res.status(400).send()
+        }
+
+    } catch (error) {
+        console.log("Invalid Email")
+        res.status(400).send()
+    }
+})
 
 app.post('/GeneralChat', async(req, res) => {
     console.log("inside general chat")
