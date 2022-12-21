@@ -51,10 +51,10 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         var fol = data.followers.length
         var Followbtn = document.getElementById("Followbtn")
         if (doesFollow(data.followers, visId)) {
-            Followbtn.className = "btn btn-primary"
+            Followbtn.className = "btn btn-success"
             Followbtn.innerText = "Following"
         } else {
-            Followbtn.className = "btn btn-outline-primary"
+            Followbtn.className = "btn btn-primary"
             Followbtn.innerText = "Follow"
         }
         var followers = data.followers
