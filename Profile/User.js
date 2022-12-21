@@ -60,7 +60,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         var followers = data.followers
         Followbtn.addEventListener('click', e => {
                 if (doesFollow(data.followers, visId)) {
-                    delete followers(followers.indexOf(visId))
+                    delete followers[followers.indexOf(visId)]
                     fetch('https://rainbowpeeps.onrender.com/editFollower', {
                         method: 'POST', // or 'PUT'
                         headers: {
@@ -73,6 +73,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                     })
                     location.reload()
                 } else {
+                    followers = followers + visId
                     fetch('https://rainbowpeeps.onrender.com/editFollower', {
                         method: 'POST', // or 'PUT'
                         headers: {
@@ -80,7 +81,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                         },
                         body: JSON.stringify({
                             id: id,
-                            followers: followers + visId,
+                            followers: followers,
                         }),
                     })
                     location.reload()
