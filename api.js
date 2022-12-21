@@ -36,13 +36,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/SignUp', async(req, res) => {
-    console.log("inside")
+
     try {
         console.log(req.body)
         const email = req.body.email
         const user = await profileinfo.findOne({ email: email })
         if (user != null) {
-            console.log("User Exists")
             return res.status(400).send({ data: "User Already Exist" })
         }
         return res.status(200).send({ data: "Success" })
@@ -52,7 +51,7 @@ app.post('/SignUp', async(req, res) => {
 })
 
 app.post('/Profile', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await profileinfo.findOne({ _id: req.body.id })
         await profileinfo.updateOne({ _id: req.body.id }, {
@@ -67,7 +66,7 @@ app.post('/Profile', async(req, res) => {
     }
 })
 app.post('/EditProfile', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await profileinfo.findOne({ _id: req.body.id })
         await profileinfo.updateOne({ _id: req.body.id }, {
@@ -95,7 +94,7 @@ app.post('/EditProfile', async(req, res) => {
 })
 app.post('/changePassword', async(req, res) => {
     try {
-        console.log("inside")
+
         const oldPassword = req.body.oldPassword
         const user = await profileinfo.findOne({ _id: req.body.id })
 
@@ -109,19 +108,16 @@ app.post('/changePassword', async(req, res) => {
             })
             res.status(200).send(user)
         } else {
-            console.log("Invalid Password")
             res.status(400).send()
         }
 
     } catch (error) {
-        console.log("Invalid Email")
         res.status(400).send()
     }
 })
 
 
 app.post('/ProfileInfo', async(req, res) => {
-    console.log("inside profileinfo")
     const data_add = new profileinfo(req.body)
     try {
         console.log(data_add)
@@ -135,7 +131,7 @@ app.post('/ProfileInfo', async(req, res) => {
 
 app.post('/Login', async(req, res) => {
     try {
-        console.log("inside")
+
         const email = req.body.email
         const password = req.body.password
         const user = await profileinfo.findOne({ email: email })
@@ -143,22 +139,22 @@ app.post('/Login', async(req, res) => {
         console.log(password)
         const isMatch = await bcrypt.compare(password, user.password)
         if (isMatch) {
-            console.log("Login Success")
+
 
             res.status(201).send()
 
         } else {
-            console.log("Invalid Password")
+
             res.status(400).send()
         }
     } catch (error) {
-        console.log("Invalid Email")
+
         res.status(400).send()
     }
 })
 
 app.post('/GeneralChat', async(req, res) => {
-    console.log("inside general chat")
+
     const data_add = new generalchat(req.body)
     try {
         console.log(data_add)
@@ -170,7 +166,7 @@ app.post('/GeneralChat', async(req, res) => {
     }
 })
 app.post('/findingfriend', async(req, res) => {
-    console.log("inside")
+
     const data_add = new findingfriend(req.body)
     try {
         console.log(data_add)
@@ -182,7 +178,7 @@ app.post('/findingfriend', async(req, res) => {
     }
 })
 app.post('/lgbtq', async(req, res) => {
-    console.log("inside ")
+
     const data_add = new lgbtq(req.body)
     try {
         console.log(data_add)
@@ -194,7 +190,7 @@ app.post('/lgbtq', async(req, res) => {
     }
 })
 app.post('/memberintroduction', async(req, res) => {
-    console.log("inside ")
+
     const data_add = new memberintroduction(req.body)
     try {
         console.log(data_add)
@@ -206,7 +202,7 @@ app.post('/memberintroduction', async(req, res) => {
     }
 })
 app.post('/mentalhealth', async(req, res) => {
-    console.log("inside ")
+
     const data_add = new mentalhealth(req.body)
     try {
         console.log(data_add)
@@ -220,7 +216,7 @@ app.post('/mentalhealth', async(req, res) => {
 
 
 app.post('/Introduction', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await memberintroduction.find({ topic: true })
         res.status(200).send(user)
@@ -230,7 +226,7 @@ app.post('/Introduction', async(req, res) => {
     }
 })
 app.post('/General', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await generalchat.find({ topic: true })
         res.status(200).send(user)
@@ -240,7 +236,7 @@ app.post('/General', async(req, res) => {
     }
 })
 app.post('/lgbt', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await lgbtq.find({ topic: true })
         res.status(200).send(user)
@@ -250,7 +246,7 @@ app.post('/lgbt', async(req, res) => {
     }
 })
 app.post('/mentalhelp', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await mentalhealth.find({ topic: true })
         res.status(200).send(user)
@@ -260,7 +256,7 @@ app.post('/mentalhelp', async(req, res) => {
     }
 })
 app.post('/Social', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await findingfriend.find({ topic: true })
         res.status(200).send(user)
@@ -270,7 +266,7 @@ app.post('/Social', async(req, res) => {
     }
 })
 app.post('/User', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await profileinfo.findOne({ _id: req.body.id })
 
@@ -282,7 +278,7 @@ app.post('/User', async(req, res) => {
 })
 
 app.post('/UserByEmail', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await profileinfo.findOne({ email: req.body.email })
 
@@ -294,7 +290,7 @@ app.post('/UserByEmail', async(req, res) => {
 })
 
 app.post('/GTopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await generalchat.findOne({ _id: req.body.id })
         res.status(200).send(user)
@@ -304,7 +300,7 @@ app.post('/GTopic', async(req, res) => {
     }
 })
 app.post('/GSubTopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await generalchat.find({ sub: req.body.id }).sort({
             _id: 1
@@ -316,7 +312,7 @@ app.post('/GSubTopic', async(req, res) => {
     }
 })
 app.post('/ITopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await memberintroduction.findOne({ _id: req.body.id })
         res.status(200).send(user)
@@ -326,7 +322,7 @@ app.post('/ITopic', async(req, res) => {
     }
 })
 app.post('/ISubTopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await memberintroduction.find({ sub: req.body.id }).sort({
             _id: 1
@@ -338,7 +334,7 @@ app.post('/ISubTopic', async(req, res) => {
     }
 })
 app.post('/LTopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await lgbtq.findOne({ _id: req.body.id })
         res.status(200).send(user)
@@ -348,7 +344,7 @@ app.post('/LTopic', async(req, res) => {
     }
 })
 app.post('/LSubTopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await lgbtq.find({ sub: req.body.id }).sort({
             _id: 1
@@ -360,7 +356,7 @@ app.post('/LSubTopic', async(req, res) => {
     }
 })
 app.post('/STopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await findingfriend.findOne({ _id: req.body.id })
         res.status(200).send(user)
@@ -370,7 +366,7 @@ app.post('/STopic', async(req, res) => {
     }
 })
 app.post('/SSubTopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await findingfriend.find({ sub: req.body.id }).sort({
             _id: 1
@@ -382,7 +378,7 @@ app.post('/SSubTopic', async(req, res) => {
     }
 })
 app.post('/MTopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await mentalhealth.findOne({ _id: req.body.id })
         res.status(200).send(user)
@@ -392,7 +388,7 @@ app.post('/MTopic', async(req, res) => {
     }
 })
 app.post('/MSubTopic', async(req, res) => {
-    console.log("inside")
+
     try {
         const user = await mentalhealth.find({ sub: req.body.id }).sort({
             _id: 1
