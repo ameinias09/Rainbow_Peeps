@@ -40,7 +40,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         console.log(data)
         const name = document.getElementById("Name")
         name.innerText = '' + data.name
-        document.getElementById("Title").innerText = data.name + "| Rainbow Peeps"
+        document.getElementById("Title").innerText = data.name + " | Rainbow Peeps"
         const about = document.getElementById("About")
         about.innerText = "" + data.about
         const br = document.createElement("br")
