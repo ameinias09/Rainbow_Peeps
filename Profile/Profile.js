@@ -71,7 +71,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         var pfp = data.pfp;
         document.getElementById("pfp0").addEventListener('click', e => {
             pfp = "0"
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         })
         document.getElementById("pfp2").addEventListener('click', e => {
             pfp = '2'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         })
         document.getElementById("pfp3").addEventListener('click', e => {
             pfp = '3'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         })
         document.getElementById("pfp4").addEventListener('click', e => {
             pfp = '4'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
 
         document.getElementById("pfp5").addEventListener('click', e => {
             pfp = '5'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -193,7 +193,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
 
         document.getElementById("pfp6").addEventListener('click', e => {
             pfp = '6'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -218,7 +218,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
 
         document.getElementById("pfp7").addEventListener('click', e => {
             pfp = '7'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -243,7 +243,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
 
         document.getElementById("pfp8").addEventListener('click', e => {
             pfp = '8'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -269,7 +269,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
 
         document.getElementById("pfp9").addEventListener('click', e => {
             pfp = '9'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -293,7 +293,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
 
         document.getElementById("pfp10").addEventListener('click', e => {
             pfp = '10'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -318,7 +318,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
 
         document.getElementById("pfp11").addEventListener('click', e => {
             pfp = '11'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
@@ -343,7 +343,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
 
         document.getElementById("pfp1").addEventListener('click', e => {
             pfp = '1'
-            fetch('https://rainbowpeeps.onrender.com/Profile', {
+            fetch('https://rainbowpeeps.onrender.com/ProfilePfp', {
                     method: 'POST', // or 'PUT'
                     headers: {
                         'Content-Type': 'application/json',
