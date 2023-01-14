@@ -370,7 +370,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         // profile image
 
 
-        document.getElementById("Followers").innerText = "Followers: " + data.followers
+        document.getElementById("Followers").innerText = "Followers: " + data.followers.length
         document.getElementById("Gender").innerText = "Gender: " + data.gender
         document.getElementById("Pronouns").innerText = "Pronouns: " + data.pronouns
         document.getElementById("Dob").innerText = "Date of Birth: " + data.dob
