@@ -54,6 +54,17 @@ app.post('/Profile', async(req, res) => {
 
     try {
         const user = await profileinfo.findOne({ _id: req.body.id })
+
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+
+app.post('/ProfilePfp', async(req, res) => {
+
+    try {
         await profileinfo.updateOne({ _id: req.body.id }, {
             $set: {
                 pfp: req.body.pfp
