@@ -384,6 +384,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         document.getElementById("Favbook").innerText = "Favourite Book: " + data.favbook
 
         posts = data.posts;
+        console.log(data.posts)
     })
 for (var i = 0; i < posts.length; i++) {
     console.log(i + " " + posts[i])
