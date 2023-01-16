@@ -30,9 +30,7 @@ btn.addEventListener('click', e => {
                 sad: [],
             }),
         })
-        .then(res => {
-            return res.json()
-        })
+        .then(res)
         .then(data => {
             console.log(data.id)
             postId = "I" + data._id;
@@ -69,7 +67,7 @@ btn.addEventListener('click', e => {
             }
         })
 
-    window.location.href = "Introduction.html";
+    //window.location.href = "Introduction.html";
 })
 
 // method: 'POST', // or 'PUT'
