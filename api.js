@@ -222,7 +222,7 @@ app.post('/GeneralChat', async(req, res) => {
         await data_add.save()
 
         try {
-            const user = await generalchat.findOne({ author: req.body.author, }, "-1")
+            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
 
             res.status(200).send(user)
         } catch (error) {
@@ -241,7 +241,7 @@ app.post('/findingfriend', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         try {
-            const user = await generalchat.findOne({ author: req.body.author, }, "-1")
+            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
 
             res.status(200).send(user)
         } catch (error) {
@@ -260,7 +260,7 @@ app.post('/lgbtq', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         try {
-            const user = await generalchat.findOne({ author: req.body.author, }, "-1")
+            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
 
             res.status(200).send(user)
         } catch (error) {
@@ -279,7 +279,7 @@ app.post('/memberintroduction', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         try {
-            const user = await generalchat.findOne({ author: req.body.author, }, "-1")
+            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
 
             res.status(200).send(user)
         } catch (error) {
@@ -298,7 +298,7 @@ app.post('/mentalhealth', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         try {
-            const user = await generalchat.findOne({ author: req.body.author, }, "-1")
+            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
 
             res.status(200).send(user)
         } catch (error) {
