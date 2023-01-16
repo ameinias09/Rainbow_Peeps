@@ -1,6 +1,6 @@
 const cookieArr = document.cookie.split("; ");
 var id = ""
-var postId = ""
+var postId
 for (var i = 0; i < cookieArr.length; i++) {
     const cookie = cookieArr[i].split("=")
     if (cookie[0] == "id") {
