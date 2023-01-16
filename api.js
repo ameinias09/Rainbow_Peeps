@@ -220,7 +220,15 @@ app.post('/GeneralChat', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
+
+        try {
+            const user = await generalchat.findOne({ author: req.body.author, }, -1)
+
+            res.status(200).send(user)
+        } catch (error) {
+            console.log(error)
+            res.status(400).send(error);
+        }
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -232,7 +240,14 @@ app.post('/findingfriend', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
+        try {
+            const user = await generalchat.findOne({ author: req.body.author, }, -1)
+
+            res.status(200).send(user)
+        } catch (error) {
+            console.log(error)
+            res.status(400).send(error);
+        }
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -244,7 +259,14 @@ app.post('/lgbtq', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
+        try {
+            const user = await generalchat.findOne({ author: req.body.author, }, -1)
+
+            res.status(200).send(user)
+        } catch (error) {
+            console.log(error)
+            res.status(400).send(error);
+        }
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -256,7 +278,14 @@ app.post('/memberintroduction', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
+        try {
+            const user = await generalchat.findOne({ author: req.body.author, }, -1)
+
+            res.status(200).send(user)
+        } catch (error) {
+            console.log(error)
+            res.status(400).send(error);
+        }
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -268,7 +297,14 @@ app.post('/mentalhealth', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
+        try {
+            const user = await generalchat.findOne({ author: req.body.author, }, -1)
+
+            res.status(200).send(user)
+        } catch (error) {
+            console.log(error)
+            res.status(400).send(error);
+        }
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
