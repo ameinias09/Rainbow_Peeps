@@ -386,6 +386,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         posts = data.posts;
     })
 for (var i = 0; i < posts.length; i++) {
+    console.log(i + " " + posts[i])
     const div = document.createElement("div")
     div.style = "background-color: rgba(0, 74, 202, 0.226); padding: 50%; border-radius: 2%;"
     const a = document.createElement("a")
