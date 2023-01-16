@@ -147,6 +147,36 @@ app.post('/editFollower', async(req, res) => {
         res.status(400).send()
     }
 })
+app.post('/UserPost', async(req, res) => {
+    try {
+        const user = await profileinfo.findOne({ _id: req.body.author })
+        await profileinfo.updateOne({ _id: req.body.author }, {
+            $push: {
+                posts: req.body.post
+            }
+        })
+        res.status(200).send(user)
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+app.post('/NotificationPost', async(req, res) => {
+    try {
+
+        await profileinfo.updateOne({ _id: req.body.id }, {
+            $push: {
+                notification: req.body.post
+            }
+        })
+        res.status(200).send(user)
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
 
 app.post('/ProfileInfo', async(req, res) => {
     const data_add = new profileinfo(req.body)
