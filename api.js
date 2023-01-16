@@ -280,7 +280,7 @@ app.post('/memberintroduction', async(req, res) => {
         await data_add.save()
         try {
             const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
-
+            console.log(user)
             res.status(200).send(user)
         } catch (error) {
             console.log(error)
