@@ -284,7 +284,7 @@ app.post('/memberintroduction', async(req, res) => {
         res.status(500).send(error);
     }
     try {
-        const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
+        const user = await generalchat.findOne({ author: req.body.author }).sort({ _id: -1 })
         console.log(user)
         res.status(200).send(user)
     } catch (error) {
