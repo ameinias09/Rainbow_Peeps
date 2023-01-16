@@ -391,7 +391,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
             div.style = "background-color: rgba(0, 74, 202, 0.226); padding: 5%; border-radius: 5%; border: 5%;"
             const a = document.createElement("a")
             if (posts[i].charAt(0) == 'G') {
-                a.href = "GTopic.html?topic=" + posts[i].substring(1)
+                a.href = "../Contents/Forum/GTopic.html?topic=" + posts[i].substring(1)
 
                 fetch('https://rainbowpeeps.onrender.com/GTopic', {
                         method: 'POST', // or 'PUT'
@@ -411,7 +411,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                     })
             }
             if (posts[i].charAt(0) == 'I') {
-                a.href = "ITopic.html?topic=" + posts[i].substring(1)
+                a.href = "../Contents/Forum/ITopic.html?topic=" + posts[i].substring(1)
                 fetch('https://rainbowpeeps.onrender.com/ITopic', {
                         method: 'POST', // or 'PUT'
                         headers: {
@@ -430,7 +430,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                     })
             }
             if (posts[i].charAt(0) == 'L') {
-                a.href = "LTopic.html?topic=" + posts[i].substring(1)
+                a.href = "../Contents/Forum/LTopic.html?topic=" + posts[i].substring(1)
                 fetch('https://rainbowpeeps.onrender.com/LTopic', {
                         method: 'POST', // or 'PUT'
                         headers: {
@@ -449,7 +449,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                     })
             }
             if (posts[i].charAt(0) == 'M') {
-                a.href = "MTopic.html?topic=" + posts[i].substring(1)
+                a.href = "../Contents/Forum/MTopic.html?topic=" + posts[i].substring(1)
                 fetch('https://rainbowpeeps.onrender.com/MTopic', {
                         method: 'POST', // or 'PUT'
                         headers: {
@@ -468,7 +468,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                     })
             }
             if (posts[i].charAt(0) == 'S') {
-                a.href = "STopic.html?topic=" + posts[i].substring(1)
+                a.href = "../Contents/Forum/STopic.html?topic=" + posts[i].substring(1)
                 fetch('https://rainbowpeeps.onrender.com/STopic', {
                         method: 'POST', // or 'PUT'
                         headers: {
