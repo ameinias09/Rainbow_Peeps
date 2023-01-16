@@ -2,7 +2,7 @@ var changepfp = false
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('user');
 const id = myParam
-var posts
+var posts = []
 const cookieArr = document.cookie.split("; ");
 var visId = ""
 

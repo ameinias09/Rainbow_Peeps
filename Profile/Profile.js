@@ -24,7 +24,7 @@ window.onclick = function(event) {
     }
 }
 var changepfp = false
-var posts
+var posts = []
 const cookieArr = document.cookie.split("; ");
 
 function getCookie(cname) {
