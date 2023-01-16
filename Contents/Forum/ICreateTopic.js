@@ -30,7 +30,9 @@ btn.addEventListener('click', e => {
                 sad: [],
             }),
         })
-        .then(res)
+        .then(res => {
+            console.log(res)
+        })
         .then(data => {
             console.log(data._id)
             postId = "I" + data._id;
