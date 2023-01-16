@@ -137,6 +137,39 @@ app.post('/editFollower', async(req, res) => {
     }
 })
 
+app.post('/UserPost', async(req, res) => {
+    try {
+        const user = await profileinfo.findOne({ _id: req.body.author })
+        await profileinfo.updateOne({ _id: req.body.author }, {
+            $push: {
+                posts: req.body.post
+            }
+        })
+        res.status(200).send(user)
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+app.post('/NotificationPost', async(req, res) => {
+    try {
+
+        await profileinfo.updateOne({ _id: req.body.id }, {
+            $push: {
+                notification: req.body.post
+            }
+        })
+        res.status(200).send(user)
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+
+
+
 app.post('/ProfileInfo', async(req, res) => {
     const data_add = new profileinfo(req.body)
     try {
@@ -180,6 +213,7 @@ app.post('/GeneralChat', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         res.json(data_add)
+        res.status(200).send(data_add)
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -192,6 +226,7 @@ app.post('/findingfriend', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         res.json(data_add)
+        res.status(200).send(data_add)
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -204,6 +239,7 @@ app.post('/lgbtq', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         res.json(data_add)
+        res.status(200).send(data_add)
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -216,6 +252,7 @@ app.post('/memberintroduction', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         res.json(data_add)
+        res.status(200).send(data_add)
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -228,6 +265,7 @@ app.post('/mentalhealth', async(req, res) => {
         console.log(data_add)
         await data_add.save()
         res.json(data_add)
+        res.status(200).send(data_add)
     } catch (error) {
         console.log(error)
         res.status(500).send(error);

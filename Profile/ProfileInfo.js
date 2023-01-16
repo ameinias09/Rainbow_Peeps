@@ -83,6 +83,8 @@ btn.addEventListener('click', e => {
                 favbook: favbook.value,
                 pfp: "0",
                 followers: [],
+                notification: [],
+                posts: [],
 
             }),
         })

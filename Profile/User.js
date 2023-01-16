@@ -2,7 +2,7 @@ var changepfp = false
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('user');
 const id = myParam
-
+var posts
 const cookieArr = document.cookie.split("; ");
 var visId = ""
 
@@ -115,4 +115,109 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         document.getElementById("Favmovie").innerText = "Favourite Movie: " + data.favmovie
         document.getElementById("Favseries").innerText = "Favourite Series: " + data.favseries
         document.getElementById("Favbook").innerText = "Favourite Book: " + data.favbook
+
+        posts = data.posts;
     })
+for (var i = 0; i < posts.length; i++) {
+    const div = document.createElement("div")
+    div.style = "background-color: rgba(0, 74, 202, 0.226); padding: 50%; border-radius: 2%;"
+    const a = document.createElement("a")
+    if (posts[i].charAt(0) == 'G') {
+        a.href = "GTopic.html?topic=" + posts[i].substring(1)
+
+        fetch('https://rainbowpeeps.onrender.com/GTopic', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: id,
+                }),
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                a.innerText = "" + data.post
+
+            })
+    }
+    if (posts[i].charAt(0) == 'I') {
+        a.href = "ITopic.html?topic=" + posts[i].substring(1)
+        fetch('https://rainbowpeeps.onrender.com/ITopic', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: id,
+                }),
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                a.innerText = "" + data.post
+
+            })
+    }
+    if (posts[i].charAt(0) == 'L') {
+        a.href = "LTopic.html?topic=" + posts[i].substring(1)
+        fetch('https://rainbowpeeps.onrender.com/LTopic', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: id,
+                }),
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                a.innerText = "" + data.post
+
+            })
+    }
+    if (posts[i].charAt(0) == 'M') {
+        a.href = "MTopic.html?topic=" + posts[i].substring(1)
+        fetch('https://rainbowpeeps.onrender.com/MTopic', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: id,
+                }),
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                a.innerText = "" + data.post
+
+            })
+    }
+    if (posts[i].charAt(0) == 'S') {
+        a.href = "STopic.html?topic=" + posts[i].substring(1)
+        fetch('https://rainbowpeeps.onrender.com/STopic', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: id,
+                }),
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                a.innerText = "" + data.post
+
+            })
+    }
+    div.appendChild(a)
+    document.getElementById("Post").appendChild(div)
+}

@@ -68,6 +68,14 @@ const profileinfoSchema = new mongoose.Schema({
     followers: {
         type: Array,
         require: true
+    },
+    notification: {
+        type: Array,
+        require: true
+    },
+    posts: {
+        type: Array,
+        require: true
     }
 });
 
