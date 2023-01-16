@@ -32,7 +32,7 @@ btn.addEventListener('click', e => {
         })
         .then(res)
         .then(data => {
-            console.log(data.id)
+            console.log(data._id)
             postId = "I" + data._id;
         })
     fetch('https://rainbowpeeps.onrender.com/UserPost', {
