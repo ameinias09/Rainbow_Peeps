@@ -37,37 +37,38 @@ btn.addEventListener('click', e => {
             console.log(data)
             postId = "I" + data._id;
             console.log(postId)
-        })
-    fetch('https://rainbowpeeps.onrender.com/UserPost', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                author: id,
-                post: postId,
-            }),
-        })
-        .then(res => {
-            return res.json()
-        })
-        .then(data => {
-            for (var i = 0; i < data.followers.length; i++) {
-                fetch('https://rainbowpeeps.onrender.com/NotificationPost', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            id: data.followers[i],
-                            post: postId,
-                        }),
-                    })
-                    .then(res => {
-                        return res.json()
-                    })
-                    .then(d)
-            }
+
+            fetch('https://rainbowpeeps.onrender.com/UserPost', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        author: id,
+                        post: postId,
+                    }),
+                })
+                .then(res => {
+                    return res.json()
+                })
+                .then(user => {
+                    for (var i = 0; i < user.followers.length; i++) {
+                        fetch('https://rainbowpeeps.onrender.com/NotificationPost', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    id: user.followers[i],
+                                    post: postId,
+                                }),
+                            })
+                            .then(res => {
+                                return res.json()
+                            })
+                            .then(d)
+                    }
+                })
         })
 
     //window.location.href = "Introduction.html";
