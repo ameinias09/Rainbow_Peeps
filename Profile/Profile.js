@@ -418,7 +418,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            id: id,
+                            id: posts[i].substring(1),
                         }),
                     })
                     .then((response) => {
