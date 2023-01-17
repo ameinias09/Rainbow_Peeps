@@ -63,8 +63,11 @@ btn.addEventListener('click', e => {
                                     post: postId,
                                 }),
                             })
+                            .then(res => {
+                                window.location.href = "Introduction.html";
+                            })
                             .then()
-                            .then()
+
                     }
                 })
         })
