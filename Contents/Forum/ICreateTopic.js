@@ -69,7 +69,7 @@ btn.addEventListener('click', e => {
                 })
         })
 
-    //window.location.href = "Introduction.html";
+    window.location.href = "Introduction.html";
 })
 
 // method: 'POST', // or 'PUT'

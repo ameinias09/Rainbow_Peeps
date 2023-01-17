@@ -163,6 +163,7 @@ div.layer {
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    flex-direction: column;
     background-color: rgba(0, 74, 202, 0.226);
     border-radius: 18px;
     color: aliceblue;
