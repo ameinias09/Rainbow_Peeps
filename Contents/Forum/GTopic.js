@@ -116,6 +116,9 @@ document.getElementById('submit').addEventListener('click', e => {
         .then((response) => {
             return response.json();
         })
-        .then((data) => { console.log(data) })
-    window.location.reload();
+        .then((data) => {
+            console.log(data)
+            window.location.reload();
+        })
+
 })
