@@ -170,7 +170,8 @@ app.post('/NotificationPost', async(req, res) => {
                 notification: req.body.post
             }
         })
-        res.status(200).send()
+        const user = await profileinfo.findOne({ _id: req.body.id })
+        res.status(200).send(user)
 
     } catch (error) {
         console.log("Error")
