@@ -63,9 +63,7 @@ btn.addEventListener('click', e => {
                                     post: postId,
                                 }),
                             })
-                            .then(res => {
-                                return res.json()
-                            })
+                            .then()
                             .then()
                     }
                 })
