@@ -66,7 +66,7 @@ btn.addEventListener('click', e => {
                             .then(res => {
                                 return res.json()
                             })
-                            .then(d)
+                            .then()
                     }
                 })
         })
