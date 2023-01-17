@@ -64,15 +64,17 @@ btn.addEventListener('click', e => {
                                 }),
                             })
                             .then(res => {
+                                return res.json()
+                            })
+                            .then(d => {
                                 window.location.href = "Introduction.html";
                             })
-                            .then()
 
                     }
                 })
         })
 
-    window.location.href = "Introduction.html";
+
 })
 
 // method: 'POST', // or 'PUT'
