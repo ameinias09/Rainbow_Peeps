@@ -488,5 +488,6 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
             }
             div.appendChild(a)
             document.getElementById("Post").appendChild(div)
+            document.getElementById("Post").appendChild(document.createElement('br'))
         }
     })
