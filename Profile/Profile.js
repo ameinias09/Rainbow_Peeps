@@ -388,7 +388,7 @@ fetch('https://rainbowpeeps.onrender.com/Profile', {
         for (var i = 0; i < posts.length; i++) {
             console.log(i + " " + posts[i])
             const div = document.createElement("div")
-            div.style = "background-color: rgba(0, 74, 202, 0.226); padding: 5%; border-radius: 5%; border: 10%;"
+            div.style = "background-color: rgba(0, 74, 202, 0.226); padding: 5%; border-radius: 5%; border: 1px solid black;"
             const a = document.createElement("a")
             if (posts[i].charAt(0) == 'G') {
                 a.href = "../Contents/Forum/GTopic.html?topic=" + posts[i].substring(1)
