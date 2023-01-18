@@ -35,7 +35,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         for (var i = 0; i < user.notification.length; i++) {
             console.log(i + " " + user.notification[i])
             const li = document.createElement("li")
-            li.style = "background-color: rgba(0, 74, 202, 0.226); padding: 5%; border-radius: 5%; border: 10%;"
+
             const a = document.createElement("a")
             if (user.notification[i].charAt(0) == 'G') {
                 a.href = "../Contents/Forum/GTopic.html?topic=" + user.notification[i].substring(1)
