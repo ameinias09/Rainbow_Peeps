@@ -63,7 +63,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
                     })
             }
             if (user.notification[i].charAt(0) == 'I') {
-                //  a.href = "../Contents/Forum/ITopic.html?topic=" + user.notification[i].substring(1)
+                //   a.href = "../Contents/Forum/ITopic.html?topic=" + user.notification[i].substring(1)
                 fetch('https://rainbowpeeps.onrender.com/ITopic', {
                         method: 'POST', // or 'PUT'
                         headers: {
