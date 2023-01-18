@@ -29,6 +29,8 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
     .then((user) => {
         // console.log(user._id)
         document.cookie = "id" + "=" + user._id + "" + "; path=/"
+        const bell = document.getElementById('Bell')
+        bell.setAttribute('current-count', user.notification)
 
     })
     .catch(e => {

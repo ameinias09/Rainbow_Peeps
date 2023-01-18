@@ -166,6 +166,26 @@ input[type=checkbox] {
     border-radius: 2%;
 }
 
+div.bell-notification {
+    color: aliceblue;
+    position: relative;
+}
+
+div.bell-notification ::after {
+    content: attr(current-count);
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: 0px;
+    right: -4px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    font-size: 8px;
+}
+
 img.icon {
     float: left;
 }
@@ -250,5 +270,8 @@ a {
         width: 75px;
         margin-left: auto;
         margin-right: auto;
+    }
+    div.bell-notification ::after {
+        right: 50%;
     }
 }

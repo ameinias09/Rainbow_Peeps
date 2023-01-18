@@ -51,6 +51,9 @@ btn.addEventListener('click', e => {
                     return res.json()
                 })
                 .then(user => {
+                    if (user.followers.length == 0) {
+                        window.location.href = "General.html";
+                    }
                     for (var i = 0; i < user.followers.length; i++) {
                         fetch('https://rainbowpeeps.onrender.com/NotificationPost', {
                                 method: 'POST',
@@ -66,7 +69,7 @@ btn.addEventListener('click', e => {
                                 return res.json()
                             })
                             .then(d => {
-                                window.location.href = "Introduction.html";
+                                window.location.href = "General.html";
                             })
 
                     }
