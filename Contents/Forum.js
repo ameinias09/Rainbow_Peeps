@@ -30,12 +30,17 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         // console.log(user._id)
         document.cookie = "id" + "=" + user._id + "" + "; path=/"
         const bell = document.getElementById('Bell')
-        bell.setAttribute('current-count', user.notification.length)
-
+            // const ck = 0;
+            // // bell.setAttribute('current-count', user.notification.length)
+            // if (ck == 0) {
+            //     // bell.classList.toggle('bell-off')
+            //     document.styleSheets[0].addRule('div.bell-notification ::after ', 'content: "' + ck + '";');
+            // }
         for (var i = 0; i < user.notification.length; i++) {
             console.log(i + " " + user.notification[i])
             const li = document.createElement("li")
-
+            li.className = "notificationTopic"
+            li.setAttribute('id', "" + user.notification[i])
             const a = document.createElement("a")
             if (user.notification[i].charAt(0) == 'G') {
                 a.href = "../Contents/Forum/GTopic.html?topic=" + user.notification[i].substring(1)
@@ -141,4 +146,23 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
     .catch(e => {
         alert("Bad Session")
     })
+
+const selectedNotification = document.getElementsByClassName('notificationTopic')
+selectedNotification.addEventListner('click', e => {
+    const post = selectedNotification.getAttribute('id')
+    fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id,
+                post: post,
+            }),
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {})
+})
 console.log(id)

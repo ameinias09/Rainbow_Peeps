@@ -168,6 +168,21 @@ app.post('/NotificationPost', async(req, res) => {
     }
 })
 
+app.post('/NotificationRemove', async(req, res) => {
+    try {
+
+        await profileinfo.updateOne({ _id: req.body.id }, {
+            $pop: {
+                notification: req.body.post
+            }
+        })
+        res.status(200).send(user)
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
 
 
 app.post('/ProfileInfo', async(req, res) => {
