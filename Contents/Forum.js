@@ -37,10 +37,11 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
             //     document.styleSheets[0].addRule('div.bell-notification ::after ', 'content: "' + ck + '";');
             // }
         for (var i = 0; i < user.notification.length; i++) {
-            console.log(i + " " + user.notification[i])
+            console.log(i + " " + user.notification[i].substring(1))
             const li = document.createElement("li")
             li.setAttribute('class', 'notificationTopic')
             li.setAttribute('id', "" + user.notification[i])
+            li.setAttribute('onclick', 'popNotification')
             const a = document.createElement("a")
             if (user.notification[i].charAt(0) == 'G') {
                 a.href = "../Contents/Forum/GTopic.html?topic=" + user.notification[i].substring(1)
@@ -147,24 +148,21 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         alert("Bad Session")
     })
 
-// const selectedNotification = document.querySelector('.notificationTopic')
-// for (var i = 0; i < selectedNotification.length; i++) {
-//     selectedNotification[i].addEventListner('click', e => {
-//         const post = selectedNotification.getAttribute('id')
-//         fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
-//                 method: 'POST', // or 'PUT'
-//                 headers: {
-//                     'Content-Type': 'application/json',
-//                 },
-//                 body: JSON.stringify({
-//                     id: id,
-//                     post: post,
-//                 }),
-//             })
-//             .then((response) => {
-//                 return response.json();
-//             })
-//             .then((data) => {})
-//     })
-// }
+function popNotification() {
+    const post = this.getAttribute('id')
+    fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id,
+                post: post,
+            }),
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {})
+}
 console.log(id)
