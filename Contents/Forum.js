@@ -170,9 +170,7 @@ function popNotification(idat) {
                 post: post,
             }),
         })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {})
+        .then()
+        .then()
 }
 console.log(id)
