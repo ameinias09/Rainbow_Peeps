@@ -32,7 +32,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         const bell = document.getElementById('Bell')
         const ck = 0;
         // bell.setAttribute('current-count', user.notification.length)
-        if (ck == 0) {
+        if (ck == user.notification.length) {
             bell.setAttribute('class', 'bell-off')
             console.log("Inside if")
         }
