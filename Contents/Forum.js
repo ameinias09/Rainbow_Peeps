@@ -147,24 +147,24 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         alert("Bad Session")
     })
 
-const selectedNotification = document.querySelector('.notificationTopic')
-for (var i = 0; i < selectedNotification.length; i++) {
-    selectedNotification[i].addEventListner('click', e => {
-        const post = selectedNotification.getAttribute('id')
-        fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
-                method: 'POST', // or 'PUT'
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    id: id,
-                    post: post,
-                }),
-            })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {})
-    })
-}
+// const selectedNotification = document.querySelector('.notificationTopic')
+// for (var i = 0; i < selectedNotification.length; i++) {
+//     selectedNotification[i].addEventListner('click', e => {
+//         const post = selectedNotification.getAttribute('id')
+//         fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
+//                 method: 'POST', // or 'PUT'
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//                 body: JSON.stringify({
+//                     id: id,
+//                     post: post,
+//                 }),
+//             })
+//             .then((response) => {
+//                 return response.json();
+//             })
+//             .then((data) => {})
+//     })
+// }
 console.log(id)
