@@ -149,7 +149,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
     })
 
 function popNotification() {
-    const post = this.getAttribute('id')
+    const post = this.id
     fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
             method: 'POST', // or 'PUT'
             headers: {
