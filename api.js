@@ -182,7 +182,7 @@ app.post('/NotificationRemove', async(req, res) => {
     try {
 
         await profileinfo.updateOne({ _id: req.body.id }, {
-            $pop: {
+            $pull: {
                 notification: req.body.post
             }
         })
