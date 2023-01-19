@@ -41,7 +41,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
             const li = document.createElement("li")
             li.setAttribute('class', 'notificationTopic')
             li.setAttribute('id', "" + user.notification[i].substring(1))
-            li.setAttribute('onclick', 'popNotification()')
+            li.setAttribute('onclick', 'popNotification(this.id)')
             const a = document.createElement("a")
             if (user.notification[i].charAt(0) == 'G') {
                 a.href = "../Contents/Forum/GTopic.html?topic=" + user.notification[i].substring(1)
@@ -143,28 +143,28 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
             document.getElementById("BellDropdown").appendChild(li)
         }
 
-        function popNotification() {
-            const post = this.id
-            fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
-                    method: 'POST', // or 'PUT'
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        id: id,
-                        post: post,
-                    }),
-                })
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {})
-        }
+
 
     })
     .catch(e => {
         alert("Bad Session")
     })
 
-
+function popNotification(idat) {
+    const post = idat
+    fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id,
+                post: post,
+            }),
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {})
+}
 console.log(id)
