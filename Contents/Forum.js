@@ -30,12 +30,12 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         // console.log(user._id)
         document.cookie = "id" + "=" + user._id + "" + "; path=/"
         const bell = document.getElementById('Bell')
-            // const ck = 0;
-            // // bell.setAttribute('current-count', user.notification.length)
-            // if (ck == 0) {
-            //     // bell.classList.toggle('bell-off')
-            //     document.styleSheets[0].addRule('div.bell-notification ::after ', 'content: "' + ck + '";');
-            // }
+        const ck = 0;
+        // bell.setAttribute('current-count', user.notification.length)
+        if (ck == 0) {
+            bell.setAttribute('class', 'bell-off')
+            console.log("Inside if")
+        }
         for (var i = 0; i < user.notification.length; i++) {
             console.log(i + " " + user.notification[i].substring(1))
             const li = document.createElement("li")
