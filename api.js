@@ -176,7 +176,7 @@ app.post('/NotificationRemove', async(req, res) => {
                 notification: req.body.post
             }
         })
-        res.status(200).send(user)
+        res.status(200).send()
 
     } catch (error) {
         console.log("Error")
