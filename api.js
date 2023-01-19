@@ -186,6 +186,7 @@ app.post('/NotificationRemove', async(req, res) => {
                 notification: req.body.post
             }
         })
+        const user = await profileinfo.findOne({ _id: req.body.id })
         res.status(200).send(user)
 
     } catch (error) {
