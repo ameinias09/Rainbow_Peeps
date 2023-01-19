@@ -143,26 +143,28 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
             document.getElementById("BellDropdown").appendChild(li)
         }
 
+        function popNotification() {
+            const post = this.id
+            fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
+                    method: 'POST', // or 'PUT'
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id: id,
+                        post: post,
+                    }),
+                })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {})
+        }
+
     })
     .catch(e => {
         alert("Bad Session")
     })
 
-function popNotification() {
-    const post = this.id
-    fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
-            method: 'POST', // or 'PUT'
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: id,
-                post: post,
-            }),
-        })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {})
-}
+
 console.log(id)
