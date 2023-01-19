@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 app.post('/SignUp', async(req, res) => {
 
     try {
-
+        console.log(req.body)
         const email = req.body.email
         const user = await profileinfo.findOne({ email: email })
         if (user != null) {
@@ -54,6 +54,17 @@ app.post('/Profile', async(req, res) => {
 
     try {
         const user = await profileinfo.findOne({ _id: req.body.id })
+
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).send(error);
+    }
+})
+
+app.post('/ProfilePfp', async(req, res) => {
+
+    try {
         await profileinfo.updateOne({ _id: req.body.id }, {
             $set: {
                 pfp: req.body.pfp
@@ -136,7 +147,6 @@ app.post('/editFollower', async(req, res) => {
         res.status(400).send()
     }
 })
-
 app.post('/UserPost', async(req, res) => {
     try {
         const user = await profileinfo.findOne({ _id: req.body.author })
@@ -160,6 +170,7 @@ app.post('/NotificationPost', async(req, res) => {
                 notification: req.body.post
             }
         })
+        const user = await profileinfo.findOne({ _id: req.body.id })
         res.status(200).send(user)
 
     } catch (error) {
@@ -167,16 +178,16 @@ app.post('/NotificationPost', async(req, res) => {
         res.status(400).send()
     }
 })
-
 app.post('/NotificationRemove', async(req, res) => {
     try {
 
         await profileinfo.updateOne({ _id: req.body.id }, {
-            $pop: {
+            $pull: {
                 notification: req.body.post
             }
         })
-        res.status(200).send()
+        const user = await profileinfo.findOne({ _id: req.body.id })
+        res.status(200).send(user)
 
     } catch (error) {
         console.log("Error")
@@ -227,8 +238,9 @@ app.post('/GeneralChat', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
-        res.status(200).send(data_add)
+
+        res.status(200).send(user)
+
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -240,8 +252,9 @@ app.post('/findingfriend', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
-        res.status(200).send(data_add)
+
+        res.status(200).send(user)
+
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -253,8 +266,8 @@ app.post('/lgbtq', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
-        res.status(200).send(data_add)
+        res.status(200).send(user)
+
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -266,12 +279,19 @@ app.post('/memberintroduction', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
         res.status(200).send(data_add)
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
     }
+    // try {
+    //     const user = await generalchat.findOne({ author: req.body.author }).sort({ _id: -1 })
+    //     console.log(user)
+    //     res.status(200).send(user)
+    // } catch (error) {
+    //     console.log(error)
+    //     res.status(400).send(error);
+    // }
 })
 app.post('/mentalhealth', async(req, res) => {
 
@@ -279,7 +299,6 @@ app.post('/mentalhealth', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.json(data_add)
         res.status(200).send(data_add)
     } catch (error) {
         console.log(error)
