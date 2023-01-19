@@ -39,7 +39,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         for (var i = 0; i < user.notification.length; i++) {
             console.log(i + " " + user.notification[i])
             const li = document.createElement("li")
-            li.className = "notificationTopic"
+            li.setAttribute('class', 'notificationTopic')
             li.setAttribute('id', "" + user.notification[i])
             const a = document.createElement("a")
             if (user.notification[i].charAt(0) == 'G') {
