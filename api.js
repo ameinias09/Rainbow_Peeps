@@ -239,14 +239,8 @@ app.post('/GeneralChat', async(req, res) => {
         console.log(data_add)
         await data_add.save()
 
-        try {
-            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
+        res.status(200).send(user)
 
-            res.status(200).send(user)
-        } catch (error) {
-            console.log(error)
-            res.status(400).send(error);
-        }
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -258,14 +252,9 @@ app.post('/findingfriend', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        try {
-            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
 
-            res.status(200).send(user)
-        } catch (error) {
-            console.log(error)
-            res.status(400).send(error);
-        }
+        res.status(200).send(user)
+
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -277,14 +266,8 @@ app.post('/lgbtq', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        try {
-            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
+        res.status(200).send(user)
 
-            res.status(200).send(user)
-        } catch (error) {
-            console.log(error)
-            res.status(400).send(error);
-        }
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
@@ -316,14 +299,7 @@ app.post('/mentalhealth', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        try {
-            const user = await generalchat.findOne({ author: req.body.author, }).sort({ _id: -1 })
-
-            res.status(200).send(user)
-        } catch (error) {
-            console.log(error)
-            res.status(400).send(error);
-        }
+        res.status(200).send(data_add)
     } catch (error) {
         console.log(error)
         res.status(500).send(error);
