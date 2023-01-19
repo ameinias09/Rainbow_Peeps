@@ -32,8 +32,8 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         const bell = document.getElementById('Bell')
         const ck = 0;
         // bell.setAttribute('current-count', user.notification.length)
-        if (ck == user.notification.length) {
-            bell.setAttribute('class', 'bell-off')
+        if (user.notification.length != 0) {
+            bell.setAttribute('class', 'bell-notification')
             console.log("Inside if")
         }
         for (var i = 0; i < user.notification.length; i++) {
