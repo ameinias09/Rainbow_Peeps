@@ -152,6 +152,14 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
 
 function popNotification(idat) {
     const post = idat
+    const cookieArr = document.cookie.split("; ");
+
+    for (var i = 0; i < cookieArr.length; i++) {
+        const cookie = cookieArr[i].split("=")
+        if (cookie[0] == "id") {
+            id = cookie[1]
+        }
+    }
     fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
             method: 'POST', // or 'PUT'
             headers: {
