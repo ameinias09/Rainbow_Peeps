@@ -40,7 +40,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
             console.log(i + " " + user.notification[i].substring(1))
             const li = document.createElement("li")
             li.setAttribute('class', 'notificationTopic')
-            li.setAttribute('id', "" + user.notification[i].substring(1))
+            li.setAttribute('id', "" + user.notification[i])
             li.setAttribute('onclick', 'popNotification(this.id)')
             const a = document.createElement("a")
             if (user.notification[i].charAt(0) == 'G') {
