@@ -31,7 +31,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         document.cookie = "id" + "=" + user._id + "" + "; path=/"
         const bell = document.getElementById('Bell')
         const ck = 0;
-        // bell.setAttribute('current-count', user.notification.length)
+        bell.setAttribute('current-count', user.notification.length)
         if (user.notification.length != 0) {
             bell.setAttribute('class', 'bell-notification')
             console.log("Inside if")
