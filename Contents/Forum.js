@@ -40,8 +40,8 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
             console.log(i + " " + user.notification[i].substring(1))
             const li = document.createElement("li")
             li.setAttribute('class', 'notificationTopic')
-            li.setAttribute('id', "" + user.notification[i])
-            li.setAttribute('onclick', 'popNotification')
+            li.setAttribute('id', "" + user.notification[i].substring(1))
+            li.setAttribute('onclick', 'popNotification()')
             const a = document.createElement("a")
             if (user.notification[i].charAt(0) == 'G') {
                 a.href = "../Contents/Forum/GTopic.html?topic=" + user.notification[i].substring(1)
