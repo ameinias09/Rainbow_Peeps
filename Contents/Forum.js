@@ -147,7 +147,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
         alert("Bad Session")
     })
 
-const selectedNotification = document.getElementsByClassName('notificationTopic')
+const selectedNotification = document.querySelector('.notificationTopic')
 selectedNotification.addEventListner('click', e => {
     const post = selectedNotification.getAttribute('id')
     fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
