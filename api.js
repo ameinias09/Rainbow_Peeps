@@ -239,7 +239,7 @@ app.post('/GeneralChat', async(req, res) => {
         console.log(data_add)
         await data_add.save()
 
-        res.status(200).send(user)
+        res.status(200).send(data_add)
 
     } catch (error) {
         console.log(error)
@@ -253,7 +253,7 @@ app.post('/findingfriend', async(req, res) => {
         console.log(data_add)
         await data_add.save()
 
-        res.status(200).send(user)
+        res.status(200).send(data_add)
 
     } catch (error) {
         console.log(error)
@@ -266,7 +266,7 @@ app.post('/lgbtq', async(req, res) => {
     try {
         console.log(data_add)
         await data_add.save()
-        res.status(200).send(user)
+        res.status(200).send(data_add)
 
     } catch (error) {
         console.log(error)
