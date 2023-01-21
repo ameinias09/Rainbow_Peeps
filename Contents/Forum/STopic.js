@@ -24,9 +24,16 @@ fetch('https://rainbowpeeps.onrender.com/STopic', {
         return response.json();
     })
     .then((data) => {
+        postAuthor = data.author
         const redirect = document.getElementById('redirect')
         redirect.href = "../.././Profile/User.html?user=" + data.author
         topic.innerText = data.post
+        const delPost = document.getElementById('deletePost')
+        if (id == data.author) {
+            delPost.innerText = "Delete Post     "
+        } else {
+            delPost.innerText = ""
+        }
         fetch('https://rainbowpeeps.onrender.com/User', {
                 method: 'POST', // or 'PUT'
                 headers: {
