@@ -195,6 +195,67 @@ app.post('/NotificationRemove', async(req, res) => {
     }
 })
 
+app.post('/memberintroductionDelPost', async(req, res) => {
+    try {
+
+        await memberintroduction.deleteOne({ _id: req.body.post })
+        await memberintroduction.deleteMany({ sub: req.body.post })
+        res.status(200).send()
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+app.post('/GeneralChatDelPost', async(req, res) => {
+    try {
+
+        await memberintroduction.deleteOne({ _id: req.body.post })
+        await memberintroduction.deleteMany({ sub: req.body.post })
+        res.status(200).send()
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+app.post('/lgbtqDelPost', async(req, res) => {
+    try {
+
+        await memberintroduction.deleteOne({ _id: req.body.post })
+        await memberintroduction.deleteMany({ sub: req.body.post })
+        res.status(200).send()
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+app.post('/mentalhealthDelPost', async(req, res) => {
+    try {
+
+        await memberintroduction.deleteOne({ _id: req.body.post })
+        await memberintroduction.deleteMany({ sub: req.body.post })
+        res.status(200).send()
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+app.post('/findingfriendDelPost', async(req, res) => {
+    try {
+
+        await memberintroduction.deleteOne({ _id: req.body.post })
+        await memberintroduction.deleteMany({ sub: req.body.post })
+        res.status(200).send()
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+
 
 app.post('/ProfileInfo', async(req, res) => {
     const data_add = new profileinfo(req.body)
