@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('topic');
 const cookieArr = document.cookie.split("; ");
 var id = ""
-
+var postAuthor = ""
 for (var i = 0; i < cookieArr.length; i++) {
     const cookie = cookieArr[i].split("=")
     if (cookie[0] == "id") {
@@ -23,6 +23,7 @@ fetch('https://rainbowpeeps.onrender.com/ITopic', {
         return response.json();
     })
     .then((data) => {
+        postAuthor = data.author
         const redirect = document.getElementById('redirect')
         redirect.href = "../.././Profile/User.html?user=" + data.author
         topic.innerText = data.post
@@ -128,3 +129,18 @@ document.getElementById('submit').addEventListener('click', e => {
         })
 
 })
+
+function delpost() {
+    fetch('https://rainbowpeeps.onrender.com/memberintroductionDelPost', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                post: post.value,
+            }),
+        })
+        .then()
+        .then()
+    console.log(postAuthor)
+}
