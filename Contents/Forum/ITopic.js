@@ -131,6 +131,7 @@ document.getElementById('submit').addEventListener('click', e => {
 })
 
 function delpost() {
+    console.log(postAuthor)
     fetch('https://rainbowpeeps.onrender.com/memberintroductionDelPost', {
             method: 'POST', // or 'PUT'
             headers: {
