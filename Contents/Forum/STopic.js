@@ -127,6 +127,18 @@ document.getElementById('submit').addEventListener('click', e => {
 
 function delpost() {
     console.log(postAuthor)
+    fetch('https://rainbowpeeps.onrender.com/ProfileDelPost', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id,
+                post: myParam,
+            }),
+        })
+        .then()
+        .then()
     fetch('https://rainbowpeeps.onrender.com/findingfriendDelPost', {
             method: 'POST', // or 'PUT'
             headers: {
