@@ -131,7 +131,7 @@ document.getElementById('submit').addEventListener('click', e => {
 })
 
 function delpost() {
-    console.log(postAuthor)
+
     fetch('https://rainbowpeeps.onrender.com/memberintroductionDelPost', {
             method: 'POST', // or 'PUT'
             headers: {
@@ -143,5 +143,39 @@ function delpost() {
         })
         .then()
         .then()
-    console.log(postAuthor)
+    fetch('https://rainbowpeeps.onrender.com/Profile', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: postAuthor,
+            }),
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((profile) => {
+            for (var i = 0; i < profile.followers.length; i++) {
+                fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
+                        method: 'POST', // or 'PUT'
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            id: profile.followers[i],
+                            post: postAuthor,
+                        }),
+                    })
+                    .then()
+                    .then()
+            }
+        })
+}
+
+function confirmDel() {
+    const validate = confirm("Do you want to delete the post?")
+    if (validate) {
+        delpost()
+    }
 }
