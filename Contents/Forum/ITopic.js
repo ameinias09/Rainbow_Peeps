@@ -138,7 +138,7 @@ function delpost() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                post: post.value,
+                post: myParam,
             }),
         })
         .then()
