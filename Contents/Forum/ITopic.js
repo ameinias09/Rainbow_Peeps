@@ -170,6 +170,7 @@ function delpost() {
                     .then()
                     .then()
             }
+            window.location.href = "Introduction.html";
         })
 }
 
