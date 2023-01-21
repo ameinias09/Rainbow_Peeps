@@ -141,7 +141,7 @@ function delpost() {
             },
             body: JSON.stringify({
                 id: id,
-                post: myParam,
+                post: "S" + myParam,
             }),
         })
         .then()
@@ -178,7 +178,7 @@ function delpost() {
                         },
                         body: JSON.stringify({
                             id: profile.followers[i],
-                            post: postAuthor,
+                            post: "S" + myParam,
                         }),
                     })
                     .then()
@@ -202,6 +202,6 @@ function sleep(ms) {
 
 async function redirect() {
 
-    await sleep(3000);
+    await sleep(2000);
     window.location.href = "Social.html";
 }

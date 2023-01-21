@@ -140,7 +140,7 @@ function delpost() {
             },
             body: JSON.stringify({
                 id: id,
-                post: myParam,
+                post: "M" + myParam,
             }),
         })
         .then()
@@ -177,7 +177,7 @@ function delpost() {
                         },
                         body: JSON.stringify({
                             id: profile.followers[i],
-                            post: postAuthor,
+                            post: "M" + myParam,
                         }),
                     })
                     .then()
@@ -201,6 +201,6 @@ function sleep(ms) {
 
 async function redirect() {
 
-    await sleep(3000);
+    await sleep(2000);
     window.location.href = "MentalHealth.html";
 }
