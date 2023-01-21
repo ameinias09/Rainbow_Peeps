@@ -211,8 +211,8 @@ app.post('/memberintroductionDelPost', async(req, res) => {
 app.post('/GeneralChatDelPost', async(req, res) => {
     try {
 
-        await memberintroduction.deleteOne({ _id: req.body.post })
-        await memberintroduction.deleteMany({ sub: req.body.post })
+        await generalchat.deleteOne({ _id: req.body.post })
+        await generalchat.deleteMany({ sub: req.body.post })
         res.status(200).send()
 
     } catch (error) {
@@ -223,8 +223,8 @@ app.post('/GeneralChatDelPost', async(req, res) => {
 app.post('/lgbtqDelPost', async(req, res) => {
     try {
 
-        await memberintroduction.deleteOne({ _id: req.body.post })
-        await memberintroduction.deleteMany({ sub: req.body.post })
+        await lgbtq.deleteOne({ _id: req.body.post })
+        await lgbtq.deleteMany({ sub: req.body.post })
         res.status(200).send()
 
     } catch (error) {
@@ -235,8 +235,8 @@ app.post('/lgbtqDelPost', async(req, res) => {
 app.post('/mentalhealthDelPost', async(req, res) => {
     try {
 
-        await memberintroduction.deleteOne({ _id: req.body.post })
-        await memberintroduction.deleteMany({ sub: req.body.post })
+        await mentalhealth.deleteOne({ _id: req.body.post })
+        await mentalhealth.deleteMany({ sub: req.body.post })
         res.status(200).send()
 
     } catch (error) {
@@ -247,8 +247,8 @@ app.post('/mentalhealthDelPost', async(req, res) => {
 app.post('/findingfriendDelPost', async(req, res) => {
     try {
 
-        await memberintroduction.deleteOne({ _id: req.body.post })
-        await memberintroduction.deleteMany({ sub: req.body.post })
+        await findingfriend.deleteOne({ _id: req.body.post })
+        await findingfriend.deleteMany({ sub: req.body.post })
         res.status(200).send()
 
     } catch (error) {
