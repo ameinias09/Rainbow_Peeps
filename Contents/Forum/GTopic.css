@@ -175,6 +175,11 @@ h4 {
     padding: 2vh;
 }
 
+.delPost {
+    color: red;
+    cursor: pointer;
+}
+
 .box {
     background-color: rgba(0, 74, 202, 0.226);
     color: aliceblue;

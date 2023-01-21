@@ -185,6 +185,11 @@ h5 {
     color: #476483;
 }
 
+.delPost {
+    color: red;
+    cursor: pointer;
+}
+
 h2 {
     margin-left: 13%;
 }

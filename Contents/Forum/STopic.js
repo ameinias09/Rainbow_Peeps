@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('topic');
 const cookieArr = document.cookie.split("; ");
 var id = ""
-
+var postAuthor = ""
 for (var i = 0; i < cookieArr.length; i++) {
     const cookie = cookieArr[i].split("=")
     if (cookie[0] == "id") {
@@ -123,3 +123,66 @@ document.getElementById('submit').addEventListener('click', e => {
         })
 
 })
+
+
+function delpost() {
+    console.log(postAuthor)
+    fetch('https://rainbowpeeps.onrender.com/findingfriendDelPost', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                post: myParam,
+            }),
+        })
+        .then()
+        .then()
+    fetch('https://rainbowpeeps.onrender.com/Profile', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: postAuthor,
+            }),
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((profile) => {
+            for (var i = 0; i < profile.followers.length; i++) {
+                fetch('https://rainbowpeeps.onrender.com/NotificationRemove', {
+                        method: 'POST', // or 'PUT'
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            id: profile.followers[i],
+                            post: postAuthor,
+                        }),
+                    })
+                    .then()
+                    .then()
+            }
+            redirect()
+
+        })
+}
+
+function confirmDel() {
+    const validate = confirm("Do you want to delete the post?")
+    if (validate) {
+        delpost()
+    }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function redirect() {
+
+    await sleep(3000);
+    window.location.href = "Social.html";
+}

@@ -243,6 +243,23 @@ app.post('/mentalhealthDelPost', async(req, res) => {
         res.status(400).send()
     }
 })
+
+app.post('/ProfileDelPost', async(req, res) => {
+    try {
+
+        await profileinfo.updateOne({ _id: req.body.id }, {
+            $pull: {
+                posts: req.body.post
+            }
+        })
+        res.status(200).send()
+
+    } catch (error) {
+        console.log("Error")
+        res.status(400).send()
+    }
+})
+
 app.post('/findingfriendDelPost', async(req, res) => {
     try {
 
