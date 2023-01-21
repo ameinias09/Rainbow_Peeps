@@ -59,7 +59,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
                         return response.json();
                     })
                     .then((data) => {
-                        if (data.post <= 15) {
+                        if (data.post.length <= 15) {
                             a.innerText = "" + data.post
                         } else {
                             a.innerText = "" + data.post.substring(0, 15) + "..."
@@ -82,7 +82,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
                         return response.json();
                     })
                     .then((data) => {
-                        if (data.post <= 15) {
+                        if (data.post.length <= 15) {
                             a.innerText = "" + data.post
                         } else {
                             a.innerText = "" + data.post.substring(0, 15) + "..."
@@ -105,7 +105,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
                         return response.json();
                     })
                     .then((data) => {
-                        if (data.post <= 15) {
+                        if (data.post.length <= 15) {
                             a.innerText = "" + data.post
                         } else {
                             a.innerText = "" + data.post.substring(0, 15) + "..."
@@ -128,7 +128,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
                         return response.json();
                     })
                     .then((data) => {
-                        if (data.post <= 15) {
+                        if (data.post.length <= 15) {
                             a.innerText = "" + data.post
                         } else {
                             a.innerText = "" + data.post.substring(0, 15) + "..."
@@ -151,7 +151,7 @@ fetch('https://rainbowpeeps.onrender.com/UserByEmail', {
                         return response.json();
                     })
                     .then((data) => {
-                        if (data.post <= 15) {
+                        if (data.post.length <= 15) {
                             a.innerText = "" + data.post
                         } else {
                             a.innerText = "" + data.post.substring(0, 15) + "..."
