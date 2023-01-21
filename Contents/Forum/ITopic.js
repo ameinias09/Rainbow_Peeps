@@ -188,6 +188,6 @@ function sleep(ms) {
 
 async function redirect() {
 
-    await sleep(5000);
+    await sleep(3000);
     window.location.href = "Introduction.html";
 }
