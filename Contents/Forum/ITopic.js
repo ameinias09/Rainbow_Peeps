@@ -170,7 +170,8 @@ function delpost() {
                     .then()
                     .then()
             }
-            window.location.href = "Introduction.html";
+            redirect()
+
         })
 }
 
@@ -179,4 +180,14 @@ function confirmDel() {
     if (validate) {
         delpost()
     }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function redirect() {
+
+    await sleep(5000);
+    window.location.href = "Introduction.html";
 }
