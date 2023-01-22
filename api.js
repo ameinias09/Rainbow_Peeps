@@ -11,11 +11,13 @@ const { generalchat } = require('./models/generalchat')
 const { findingfriend } = require('./models/findingfriend')
 const { lgbtq } = require('./models/lgbtq')
 const { memberintroduction } = require('./models/memberintroduction')
-const { mentalhealth } = require('./models/mentalhealth')
+const { mentalhealth } = require('./models/mentalhealth');
+const { config } = require("dotenv");
+require("dotenv").config();
 
 
 app.use(cookieParser())
-mongoose.connect('mongodb+srv://RainbowPeeps:RainbowPeeps57@rainbowpeeps.gvhsno1.mongodb.net/test').then(() => {
+mongoose.connect(process.env.DB_KEY).then(() => {
     console.log("Connected")
 }).catch((err) => {
     console.log(err)
