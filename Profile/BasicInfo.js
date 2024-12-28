@@ -15,27 +15,6 @@ btn.addEventListener('click', e => {
     document.cookie = "rorientation" + "=" + rorientation.value + "" + "; path=/"
     document.cookie = "pronouns" + "=" + pronouns.value + "" + "; path=/"
     document.cookie = "sorientation" + "=" + sorientation.value + "" + "; path=/"
-        // fetch('https://rainbowpeeps.onrender.com/BasicInfo', {
-        //         method: 'POST', // or 'PUT'
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'Content-Type': 'application/json',
-        //             'Content-Type': 'application/json',
-        //             'Content-Type': 'application/json',
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify({
-        //             dob: dob.value,
-        //             gender: gender.value,
-        //             pronouns: pronouns.value,
-        //             rorientation: rorientation.value,
-        //             sorientation: sorientation.value,
-        //         }),
-        //     })
-        //     .then(res => {
-        //         return res.json()
-        //     })
-        //     .then(data => console.log(data))
 
     window.location.replace("ProfileInfo.html");
 })
